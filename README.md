@@ -4,10 +4,11 @@ The free companion prompt repository for *Claude AI for Finance Professionals*.
 
 Live at <https://tejasgjadhav.github.io/claude-finance-prompts/>
 
-- `index.html` - the page readers land on. Self-contained: no CDN, no external
-  fonts, nothing fetched at runtime. Grouped by the 15 desk chapters, every
-  prompt shown as its five CRAFT layers, one anchor and one copy button per
-  prompt, search across all 122, light and dark, legible at 375px.
+- `index.html` - the page readers land on. A plain reference list: prompts 1 to
+  122 in book order, one after another, each in its five CRAFT layers, with the
+  desk name as a divider row. Self-contained: no CDN, no external fonts, nothing
+  fetched at runtime. Search, per-prompt copy, `#p87`-style deep links, light and
+  dark, legible at 375px. No hero, no editorial framing - it is a lookup page.
 - `PROMPTS.md` - the same 122 prompts as plain Markdown. This is the input.
 - `build_site.py` - regenerates `index.html` from `PROMPTS.md`.
 
