@@ -2153,13 +2153,13 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 107 — The Options Pricing & Greeks Calculator Framework
 
 ```
-CONTEXT: Available in the repo: a position file of European options with strikes, expiries, and market prices, plus the current risk-free curve. No pricing library is installed.
+CONTEXT: Available in the repo: a position file of European options on [UNDERLYING] ([FILE]) with strikes, expiries and market prices, plus the risk-free curve dated [DATE]. No pricing library is installed.
 
 ROLE: Derivatives quant — specifying and reviewing Black-Scholes options pricer.
 
 ACTION:
   1. Ask Claude Code to build a Black-Scholes options pricer in Python.
-  2. Specification: European call and put pricing, all five Greeks (Delta, Gamma, Theta, Vega, Rho), implied volatility solver (Newton-Raphson), portfolio Greeks aggregation across multiple positions.
+  2. Specification: European call and put pricing, all five Greeks (Delta, Gamma, Theta, Vega, Rho), implied volatility solver (Newton-Raphson), portfolio Greeks aggregation across [N] positions.
 
 FORMAT: Claude Code implements the pricer. Analyst verifies: Black-Scholes assumptions match market conventions, IV solver convergence, Greeks calculation against textbook solutions.
 
@@ -2408,12 +2408,12 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 ### PROMPT 120 — The Investment Committee Presentation Preparation Pipeline
 
 ```
-CONTEXT: Current portfolio weights and the prior week's IC deck are both in the shared folder. The weekly run happens the night before the meeting, and the PM reviews everything.
+CONTEXT: Current portfolio weights for [FUND/PORTFOLIO] and the prior IC deck are both in [FOLDER]. The run happens the night before [MEETING DATE], and the PM reviews everything.
 
 ROLE: Research team lead, automating IC deck preparation via Cowork.
 
 ACTION:
-  1. Automate IC deck preparation using a Cowork weekly workflow. Step 1 (Haiku): pull current portfolio weights, compare to last IC, then calculate all position changes.
+  1. Automate IC deck preparation using a Cowork [CADENCE] workflow. Step 1 (Haiku): pull current portfolio weights, compare to last IC, then calculate all position changes.
 
 FORMAT: IC deck automation pipeline with position change analysis and PM review gate.
 
