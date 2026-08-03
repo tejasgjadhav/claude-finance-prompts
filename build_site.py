@@ -112,6 +112,7 @@ a{color:var(--accent)}
 h1{font:600 20px/1.25 var(--mono);letter-spacing:-.02em;margin:0 0 8px}
 .sub{margin:0 0 6px;color:var(--ink2);font-size:13.5px}
 .note{margin:0;color:var(--muted);font-size:12.5px}
+.sep{color:var(--muted);margin:0 5px}
 
 /* ---------- sticky bar ---------- */
 .bar{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--rule)}
@@ -326,7 +327,7 @@ page = """<!doctype html>
 <div class="wrap">
   <header class="mast">
     <h1>The Prompt Repository &mdash; prompts 1 to %(total)d</h1>
-    <p class="sub">All %(total)d prompts from <a href="https://www.amazon.com/dp/B0GSX73KF6" rel="noopener">Claude AI for Finance Professionals</a>, in full. Numbering matches the book: prompt 47 here is prompt 47 there.</p>
+    <p class="sub">All %(total)d prompts from <a href="https://www.amazon.com/dp/B0GSX73KF6" rel="noopener">Claude AI for Finance Professionals</a>, in full. Numbering matches the book: prompt 47 here is prompt 47 there.<span class="sep">&middot;</span><a href="https://tejasgjadhav.github.io/" rel="noopener">About the Author</a></p>
     <p class="note">CRAFT is this book&rsquo;s framework. It is not Anthropic&rsquo;s and it is not in the model documentation.</p>
   </header>
 </div>
@@ -348,7 +349,7 @@ page = """<!doctype html>
 <main class="wrap">
 %(blocks)s
   <p class="empty" id="empty">No prompt matches that.</p>
-  <footer>%(total)d prompts, %(nch)d desks, five layers each. Free to use and adapt. Not investment advice.</footer>
+  <footer>%(total)d prompts, %(nch)d desks, five layers each. Free to use and adapt. Not investment advice.<span class="sep">&middot;</span><a href="https://tejasgjadhav.github.io/" rel="noopener">About the Author</a></footer>
 </main>
 
 <a class="top" id="top" href="#">Top</a>
