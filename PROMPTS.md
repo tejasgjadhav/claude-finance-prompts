@@ -1,10 +1,10 @@
 # The Prompt Repository
 
-All 122 prompts from the book "Claude AI for Finance Professionals", free, in full. Each one shows the same five layers: Context, Role, Action, Format, Tone.
+A free repository of 122 finance prompts, in full. Each one shows the same five layers: Context, Role, Action, Format, Tone.
 
-Numbering matches the book exactly: Prompt 47 here is Prompt 47 there.
+Numbering is stable: Prompt 47 here stays Prompt 47 wherever you reference it.
 
-> CRAFT is this book's framework. It is not Anthropic's and it is not in the model documentation, so there is no point looking for it there.
+> CRAFT is the framework used on this page. It is not Anthropic's and it is not in the model documentation, so there is no point looking for it there.
 
 ---
 
@@ -2470,5 +2470,5 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 
 ---
 
-The prompts are the smallest part of the book. The finance context behind each one, why a layer is written the way it is, what the output looks like when it is right, and where it goes wrong are in the chapters, not on this page. Everything here is illustrative. Validate every figure before it reaches a live workflow. Nothing on this page is investment advice.
+A prompt on its own is the smallest part of the work. The finance context behind each one, why a layer is written the way it is, what the output looks like when it is right, and where it goes wrong are not on this page. Everything here is illustrative. Validate every figure before it reaches a live workflow. Nothing on this page is investment advice.
 

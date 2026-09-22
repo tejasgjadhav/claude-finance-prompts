@@ -317,7 +317,7 @@ page = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Prompt Repository &mdash; %(total)d finance prompts, 1 to %(total)d</title>
-<meta name="description" content="All %(total)d prompts from Claude AI for Finance Professionals, numbered 1 to %(total)d, each in its five CRAFT layers.">
+<meta name="description" content="A free repository of %(total)d finance prompts, numbered 1 to %(total)d, each in its five CRAFT layers.">
 <meta name="color-scheme" content="light dark">
 <style>%(css)s</style>
 </head>
@@ -327,8 +327,8 @@ page = """<!doctype html>
 <div class="wrap">
   <header class="mast">
     <h1>The Prompt Repository &mdash; prompts 1 to %(total)d</h1>
-    <p class="sub">All %(total)d prompts from <a href="https://www.amazon.com/dp/B0GSX73KF6" rel="noopener">Claude AI for Finance Professionals</a>, in full. Numbering matches the book: prompt 47 here is prompt 47 there.<span class="sep">&middot;</span><a href="https://tejasgjadhav.github.io/" rel="noopener">About the Author</a></p>
-    <p class="note">CRAFT is this book&rsquo;s framework. It is not Anthropic&rsquo;s and it is not in the model documentation.</p>
+    <p class="sub">%(total)d finance prompts, in full. Each one is numbered, so prompt 47 stays prompt 47 wherever you reference it.</p>
+    <p class="note">CRAFT is the framework used on this page. It is not Anthropic&rsquo;s and it is not in the model documentation.</p>
   </header>
 </div>
 
@@ -349,7 +349,7 @@ page = """<!doctype html>
 <main class="wrap">
 %(blocks)s
   <p class="empty" id="empty">No prompt matches that.</p>
-  <footer>%(total)d prompts, %(nch)d desks, five layers each. Free to use and adapt. Not investment advice.<span class="sep">&middot;</span><a href="https://tejasgjadhav.github.io/" rel="noopener">About the Author</a></footer>
+  <footer>%(total)d prompts, %(nch)d desks, five layers each. Free to use and adapt. Not investment advice.</footer>
 </main>
 
 <a class="top" id="top" href="#">Top</a>
