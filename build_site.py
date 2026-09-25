@@ -317,6 +317,7 @@ page = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Prompt Repository &mdash; %(total)d finance prompts, 1 to %(total)d</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
 <meta name="description" content="A free repository of %(total)d finance prompts, numbered 1 to %(total)d, each in its five CRAFT layers.">
 <meta name="color-scheme" content="light dark">
 <style>%(css)s</style>
