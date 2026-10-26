@@ -75,12 +75,12 @@ Then change one layer. Change three at once and you learn nothing about which on
 ### PROMPT 1 — The Benjamin Graham Margin of Safety & Net-Net Screen
 
 ```
-CONTEXT: Attached: the [UNIVERSE] screening file ([FILE]) with balance sheet and ten-year earnings fields already pulled. Output feeds the value watchlist review. Data vintage: last reported fiscal year.
+CONTEXT: Attached: the 1,617 US-listed holdings universe (NBIM_13F_2026Q2_holdings.csv), with balance sheet and ten-year earnings fields pulled from each issuer's own filings into your screening file. Output feeds the value watchlist review. Data vintage: last reported fiscal year. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Senior value analyst applying Benjamin Graham's documented Security Analysis methodology.
 
 ACTION:
-  1. Screen [N] stocks in [UNIVERSE] for deep value using Graham's documented criteria.
+  1. Screen [N] stocks in 1,617 US-listed holdings for deep value using Graham's documented criteria.
   2. Graham Net-Net: Current Assets minus Total Liabilities vs Market Cap
   3. Margin of Safety: minimum 33% discount to intrinsic value Financial strength: current ratio >2x, long-term debt limited Earnings stability: positive EPS in each of the last 10 years Dividend record: uninterrupted payments for at least 20 years P/E below 15x, P/Book below 1.5x, combined product <22.5 Graham Number = square root of (22.5 x EPS x Book Value Per Share)
 
@@ -96,12 +96,12 @@ TONE: Institutional equity research. Every forward-looking figure labelled an es
 ### PROMPT 2 — The Peter Lynch PEG Ratio & GARP Discovery Framework
 
 ```
-CONTEXT: You have the [UNIVERSE] fundamentals file ([FILE]) plus institutional ownership data. The list goes to a small and mid cap idea meeting, so coverage gaps matter more than precision.
+CONTEXT: You have the 1,617 US-listed holdings fundamentals file (NBIM_13F_2026Q2_holdings.csv) plus institutional ownership data. The list goes to a small and mid cap idea meeting, so coverage gaps matter more than precision. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Growth-at-a-reasonable-price analyst applying Peter Lynch's documented GARP methodology.
 
 ACTION:
-  1. Screen [UNIVERSE] for GARP opportunities using Lynch's documented framework.
+  1. Screen 1,617 US-listed holdings for GARP opportunities using Lynch's documented framework.
   2. PEG ratio: P/E divided by earnings growth rate. Target: PEG <1.0 Lynch categories: Stalwarts (8-12% growers), Fast Growers (20-25%), Turnarounds, Cyclicals Hidden gems: small/mid-cap with <30% institutional ownership Ten-bagger potential assessment: can this company grow 10x in 10 years?
   3. Avoid: >60% institutional ownership (Lynch's 'overfollowed' warning) Insider ownership: management skin in the game preferred
 
@@ -117,12 +117,12 @@ TONE: Institutional equity research. Every forward-looking figure labelled an es
 ### PROMPT 3 — The Buffett Owner Earnings & Economic Moat Framework
 
 ```
-CONTEXT: Available: ten years of [COMPANY] annual filings ([FILE]) including cash flow statements and capex detail. Maintenance capex is not disclosed separately, so state how you split it.
+CONTEXT: Available: ten years of Apple Inc. annual filings (aapl-20250927.htm) including cash flow statements and capex detail. Maintenance capex is not disclosed separately, so state how you split it. Source: https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm
 
 ROLE: Long-term quality investor applying Warren Buffett's documented owner earnings methodology.
 
 ACTION:
-  1. Evaluate [COMPANY] using Buffett's documented owner earnings and moat framework. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Evaluate Apple Inc. using Buffett's documented owner earnings and moat framework. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
   2. Owner Earnings = Net Income + D&A - Maintenance Capex (Buffett 1986 annual letter) Moat types: Brand, Cost advantage, Network effect, Switching cost ROE consistently above 15% for 10 years without excessive leverage ROIC above WACC sustained for 10 years Pricing power: has the company raised prices without losing volume in 5 years?
   3. Intrinsic value: 10-year owner earnings projection discounted at 9-10%
 
@@ -139,12 +139,12 @@ TONE: Institutional equity research. Every forward-looking figure labelled an es
 ### PROMPT 4 — The AQR Quality-Value-Momentum Multi-Factor Ranking
 
 ```
-CONTEXT: Working from the [UNIVERSE] factor data file ([FILE]), fundamentals and twelve-month price history included. Ranking feeds a quarterly portfolio rebalance. Data vintage: month end [DATE].
+CONTEXT: Working from the 1,617 US-listed holdings factor data file (NBIM_13F_2026Q2_holdings.csv), fundamentals and twelve-month price history included. Ranking feeds a quarterly portfolio rebalance. Data vintage: month end quarter ended 30 June 2026. Fix your three factor weights first and write down why each one earns its share. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Quantitative analyst applying publicly documented multi-factor investing research.
 
 ACTION:
-  1. Apply AQR's documented QVM multi-factor model to rank [UNIVERSE]. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Apply AQR's documented QVM multi-factor model to rank 1,617 US-listed holdings. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
   2. Quality factor (per AQR Asness et al. published research): Profitability: gross profits/assets, ROE, ROA, cash flow/assets Growth: 5yr growth in profitability measures
   3. Safety: low beta, low leverage, high Altman Z-score Value factor: book-to-market, earnings yield, cash flow yield Momentum factor: 12-1 month return (excluding last month) Composite: equal-weight Quality + Value + Momentum z-scores Flag: stocks in top quintile of ALL three factors simultaneously
 
@@ -160,7 +160,7 @@ TONE: Institutional equity research. Every forward-looking figure labelled an es
 ### PROMPT 5 — The Macro-Aware Earnings-Yield Spread & Valuation Framework
 
 ```
-CONTEXT: Given [MARKET/SECTOR/COMPANY] forward earnings estimates and the sovereign curve as of [DATE] close ([FILE]). Twenty years of history is available. The read feeds an asset allocation discussion.
+CONTEXT: Given forward earnings estimates for [MARKET/SECTOR/COMPANY] and the sovereign curve as of FY2025 (year ended 31 December 2025) close, both from your own market-data feed. Twenty years of history is available. The read feeds an asset allocation discussion. Input: your own file, not a public filing.
 
 ROLE: Senior strategist applying PIMCO's publicly documented macro-aware equity valuation approach.
 
@@ -180,13 +180,13 @@ TONE: Institutional equity research. Every forward-looking figure labelled an es
 ### PROMPT 6 — The Quantitative Pattern & Market Anomaly Detection
 
 ```
-CONTEXT: Attached: daily prices, volume and short interest for [TICKER] over [TIME PERIOD] ([FILE]). Sample sizes are small in places. Nothing here becomes a position without a stated economic reason.
+CONTEXT: Attached: daily prices, volume and short interest for Shell plc over the quarter ended 30 June 2026 from your own market-data feed, with its annual filing (shel-20251231.htm) alongside. Sample sizes are small in places. Nothing here becomes a position without a stated economic reason. Source: https://www.sec.gov/Archives/edgar/data/1306965/000162828026017024/shel-20251231.htm
 
 ROLE: Quantitative researcher identifying statistically significant, economically-justified patterns.
 
 ACTION:
-  1. Identify statistically significant patterns for [TICKER] over [TIME PERIOD].
-  2. Seasonal patterns: best/worst calendar months with p-value and sample size Earnings window: pre-announcement drift, post-earnings persistence, reversal Macro event correlations: Fed meetings, CPI releases, index rebalancing Short interest dynamics: squeeze potential via days-to-cover ratio Statistical edge summary: lowest p-value pattern that also has an economic rationale CRITICAL: every pattern must have an economic rationale, not just statistical significance
+  1. Test the covered name, Shell plc, for calendar effects a research note could defend.
+  2. Seasonal patterns: best and worst calendar months with p-value and sample size Earnings window: pre-announcement drift, post-earnings persistence, reversal Macro event correlations: Fed meetings, CPI releases, index rebalancing Short interest dynamics: squeeze potential via days-to-cover ratio Statistical edge summary: lowest p-value pattern that also has an economic rationale CRITICAL: every pattern must have an economic rationale, not just statistical significance
 
 FORMAT: Pattern table with p-values, sample sizes, and economic rationale per pattern.
 
@@ -201,7 +201,7 @@ TONE: Institutional equity research. Every forward-looking figure labelled an es
 ### PROMPT 7 — The Macro-Driven Sector Rotation & Cycle Positioning
 
 ```
-CONTEXT: You have current sector multiples, consensus growth estimates and the macro dashboard in [FILE]. Positioning goes to the monthly strategy meeting and is reviewed again in six months.
+CONTEXT: You have current sector multiples, consensus growth estimates and a macro dashboard from your own market-data feed, plus SAP SE's annual filing (sap-20251231x20f.htm). Positioning goes to the monthly strategy meeting and is reviewed again in six months. Source: https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm
 
 ROLE: Chief equity strategist with expertise in economic cycle analysis and sector allocation.
 
@@ -221,13 +221,13 @@ TONE: Institutional equity research. Every forward-looking figure labelled an es
 ### PROMPT 8 — The Buy-Side Full Due Diligence Research Note
 
 ```
-CONTEXT: Attached: [COMPANY] filings, transcripts and the peer file ([FILE]) for [TICKER]. The note goes to the investment committee, so every derived figure needs a traceable source.
+CONTEXT: Attached: Apple Inc.'s annual filing (aapl-20250927.htm), its earnings transcripts and your own peer file. The note goes to the investment committee, so every derived figure needs a traceable source. Write your thesis in one sentence before you start, and name the single finding that would retire it. Source: https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm
 
 ROLE: Managing Director at a large sell-side firm preparing a full IC package for a new position. Apply the standard you would defend to the committee.
 
 ACTION:
-  1. Full institutional due diligence on [COMPANY], [TICKER]. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
-  2. Ask Claude: 'Using the latest publicly available financials for [COMPANY]:'
+  1. Full institutional due diligence on Apple Inc., Apple Inc.. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  2. Ask Claude: 'Using the latest publicly available financials for Apple Inc.:'
   3. Business quality: revenue model, moat type, moat trajectory Financial quality: Revenue CAGR 3yr, EBITDA margin, FCF conversion, leverage Management: capital allocation track record, insider ownership, succession Valuation: DCF with WACC + TGR sensitivity, EV/EBITDA vs peers, P/FCF vs history Three 12-month catalysts with magnitude and probability each Two bear cases: specific mechanistic path to loss, probability, magnitude Position size: core 3-5%, standard 1-3%, watch <1% Pre-mortem: most credible path to being wrong
 
 FORMAT: IC-ready research note. Assumption log required.
@@ -246,12 +246,12 @@ TONE: Institutional equity research. Every forward-looking figure labelled an es
 ### PROMPT 9 — The Institutional Buy-Side DCF Valuation Model
 
 ```
-CONTEXT: Attached: [COMPANY] segment disclosures, five years of filings and the current capital structure ([FILE]). The output number sits in a board pack. Data vintage: filings dated [DATE].
+CONTEXT: Attached: Microsoft Corporation segment disclosures, five years of filings and the current capital structure (msft-20260630.htm). The output number sits in a board pack. Data vintage: filings dated FY2025 (year ended 31 December 2025). State your terminal growth rate, and your reason for it, before any cash flow is discounted. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Managing Director at a large sell-side firm building the M&A DCF, the number the board pack rests on. Apply the standard you would defend in that room.
 
 ACTION:
-  1. Build a complete DCF for [COMPANY], [TICKER]. Five-year revenue projections by segment. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Build a complete DCF for Microsoft Corporation, Microsoft Corporation. Five-year revenue projections by segment. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Investment banking valuation memo. BCE only. Source every assumption.
 
@@ -265,12 +265,12 @@ TONE: Deal-side analytical. State what is assumed versus what is disclosed. No r
 ### PROMPT 10 — The Institutional Cost of Capital Construction
 
 ```
-CONTEXT: You have [COMPANY] market data, debt schedules and [COUNTRY/MARKET] sovereign yields in [FILE]. This WACC will be challenged line by line, so each input needs a date.
+CONTEXT: You have Microsoft Corporation's debt schedules from its 10-K (msft-20260630.htm), plus market data and [COUNTRY/MARKET] sovereign yields from your own feed. This WACC will be challenged line by line, so each input needs a date. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Senior financial analyst specialising in defensible WACC estimation.
 
 ACTION:
-  1. Build a fully sourced WACC for [COMPANY] in [COUNTRY/MARKET]. RF rate with exact source and date. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Build a fully sourced WACC for Microsoft Corporation in [COUNTRY/MARKET]. RF rate with exact source and date. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: WACC table with every component sourced. Sensitivity analysis included.
 
@@ -284,12 +284,12 @@ TONE: Deal-side analytical. State what is assumed versus what is disclosed. No r
 ### PROMPT 11 — The Institutional Peer Group Valuation Framework
 
 ```
-CONTEXT: Given [TARGET] financials and a candidate peer list of [N] companies ([FILE]). Some candidates are poor matches on size or mix. Market data as of [DATE] close.
+CONTEXT: Given Microsoft Corporation financials and a candidate peer list of [N] companies (msft-20260630.htm). Some candidates are poor matches on size or mix. Market data as of FY2025 (year ended 31 December 2025) close. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Senior equity analyst building a sourced peer group valuation.
 
 ACTION:
-  1. Comparable company analysis for [TARGET] vs [N]-company peer group. State peer inclusion/exclusion rationale. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Comparable company analysis for Microsoft Corporation vs [N]-company peer group. State peer inclusion/exclusion rationale. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Comps table with implied valuation range and premium/discount analysis.
 
@@ -303,12 +303,12 @@ TONE: Deal-side analytical. State what is assumed versus what is disclosed. No r
 ### PROMPT 12 — The Private Equity Leveraged Buyout Returns Analysis
 
 ```
-CONTEXT: Available: [COMPANY] historical financials and indicative debt terms from the lender file ([FILE]). Sponsor entry range is [X] to [X] times EBITDA. Hold period assumption: five years.
+CONTEXT: Available: SAP SE historical financials from its annual filing (sap-20251231x20f.htm), and indicative debt terms from the lender file. Sponsor entry range is [X] to [X] times EBITDA. Hold period assumption: five years. Commit to an exit multiple now and say whether it is above, at or below the entry multiple. Source: https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm
 
 ROLE: Private equity analyst building sponsor acquisition returns analysis.
 
 ACTION:
-  1. Complete LBO analysis for [COMPANY]. Entry EV/EBITDA: [X]-[X]x. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Complete LBO analysis for SAP SE. Entry EV/EBITDA: [X]-[X]x. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Returns matrix as primary output with DSCR table.
 
@@ -322,12 +322,12 @@ TONE: Deal-side analytical. State what is assumed versus what is disclosed. No r
 ### PROMPT 13 — The M&A Control Premium & Transaction Multiple Framework
 
 ```
-CONTEXT: Working from announced [SECTOR] deals above [CUR][X] over the last [N] years ([FILE]). Disclosure is uneven across deals. Missing multiples must be marked, not estimated.
+CONTEXT: Working from announced Information Technology deals above USD[X] over the last [N] years (msft-20260630.htm). Disclosure is uneven across deals. Missing multiples must be marked, not estimated. Name which precedent deals you accept as comparable, and on what test, before any premium is averaged. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Senior M&A banker analysing transaction multiples and control premiums.
 
 ACTION:
-  1. Precedent transactions for [SECTOR], last [N] years, deal >[CUR][X]. For each: acquirer, target, date, EV, EV/EBITDA, EV/Revenue, control premium.
+  1. Precedent transactions for Information Technology, last [N] years, deal >USD[X]. For each: acquirer, target, date, EV, EV/EBITDA, EV/Revenue, control premium.
 
 FORMAT: Transaction table with control premium analysis and implied target range.
 
@@ -341,12 +341,12 @@ TONE: Deal-side analytical. State what is assumed versus what is disclosed. No r
 ### PROMPT 14 — The Conglomerate SOTP & Break-Up Value Analysis
 
 ```
-CONTEXT: Segment reporting for [COMPANY]'s [N] businesses is in [FILE], along with the pure play comparable set. Corporate costs are unallocated. Output supports a break up discussion.
+CONTEXT: Segment reporting for Alphabet Inc.'s [N] businesses is in goog-20251231.htm, along with the pure play comparable set. Corporate costs are unallocated. Output supports a break up discussion. Decide the conglomerate discount you will apply and defend the number, because it decides the answer. Source: https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm
 
 ROLE: Managing Director at a large sell-side firm applying SOTP methodology. Value each segment as you would defend it to the board.
 
 ACTION:
-  1. SOTP valuation for [COMPANY] with [N] business segments. Per segment: appropriate methodology and pure-play comparable. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. SOTP valuation for Alphabet Inc. with [N] business segments. Per segment: appropriate methodology and pure-play comparable. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: SOTP table with conglomerate discount and implied value vs current market cap.
 
@@ -360,12 +360,12 @@ TONE: Deal-side analytical. State what is assumed versus what is disclosed. No r
 ### PROMPT 15 — The M&A Deal Economics & EPS Impact Framework
 
 ```
-CONTEXT: You have [ACQUIRER] and [TARGET] standalone financials plus the proposed [X]% cash and [X]% stock structure ([FILE]). Synergy estimates are management supplied and unaudited.
+CONTEXT: You have Microsoft Corporation's financials (msft-20260630.htm), Salesforce standalone financials, and the proposed [X]% cash and [X]% stock structure from the deal file. Synergy estimates are management supplied and unaudited. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: M&A banker assessing deal economics and EPS impact for the acquirer.
 
 ACTION:
-  1. Accretion/dilution analysis for [ACQUIRER] acquiring [TARGET]. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Accretion/dilution analysis for Microsoft Corporation acquiring Salesforce. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
   2. Deal: [X]% cash / [X]% stock.
 
 FORMAT: Accretion/dilution table by year with synergy sensitivity.
@@ -380,12 +380,12 @@ TONE: Deal-side analytical. State what is assumed versus what is disclosed. No r
 ### PROMPT 16 — The Investment Banking Fairness Opinion Analytical Structure
 
 ```
-CONTEXT: Given the [CONSIDERATION] offer for [TARGET] and the full valuation file ([FILE]). The board reviews this before voting, so methodology weightings must be stated and defended.
+CONTEXT: Given the all-cash offer for SAP SE and the full valuation file (sap-20251231x20f.htm). The board reviews this before voting, so methodology weightings must be stated and defended. Source: https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm
 
 ROLE: Managing Director at a large sell-side firm preparing the analytical structure for a board fairness opinion. Apply the standard you would defend in that room.
 
 ACTION:
-  1. Fairness opinion analytical framework for [TARGET] at [CONSIDERATION]. Methods: DCF, comparable companies, precedent transactions, LBO floor, 52-week trading range. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Fairness opinion analytical framework for SAP SE at all-cash. Methods: DCF, comparable companies, precedent transactions, LBO floor, 52-week trading range. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Football field with methodology ranges and majority fairness assessment.
 
@@ -401,7 +401,7 @@ TONE: Deal-side analytical. State what is assumed versus what is disclosed. No r
 ### PROMPT 17 — The Ray Dalio All-Weather Portfolio Environment Assessment
 
 ```
-CONTEXT: Attached: the current holdings file with weights and asset class tags ([FILE]). Growth and inflation regime indicators are in tab two. Output feeds the quarterly allocation review.
+CONTEXT: Attached: the current holdings file with weights and asset class tags (msft-20260630.htm). Growth and inflation regime indicators are in tab two. Output feeds the quarterly allocation review. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Senior risk analyst applying the Dalio All-Weather portfolio framework.
 
@@ -420,12 +420,12 @@ TONE: Macro strategist. Scenarios, not forecasts. Attach a probability or say th
 ### PROMPT 18 — The Macro Hedge Fund Risk Assessment
 
 ```
-CONTEXT: You have [PORTFOLIO] positions, benchmark weights and three years of factor returns ([FILE]). Mandate caps active factor exposure at [X]% of tracking error budget.
+CONTEXT: You have the US-listed equity sleeve in NBIM_13F_2026Q2_holdings.csv, plus benchmark weights and three years of factor returns in your own files. Mandate caps active factor exposure at [X]% of tracking error budget. List the scenarios in scope before the run, so the set is not chosen after you have seen which ones hurt. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Macro hedge fund risk analyst assessing systematic factor exposures.
 
 ACTION:
-  1. Systematic risk assessment for [PORTFOLIO]. Factor exposures: growth, value, quality, momentum, duration, currency. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Systematic risk assessment for NBIM_13F_2026Q2_holdings.csv. Factor exposures: growth, value, quality, momentum, duration, currency. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Risk assessment with factor exposures and stress test results.
 
@@ -439,7 +439,7 @@ TONE: Macro strategist. Scenarios, not forecasts. Attach a probability or say th
 ### PROMPT 19 — The Deep Portfolio Vulnerability & Assumption Challenge
 
 ```
-CONTEXT: Available: the current portfolio, the written investment thesis for each core position and recent performance ([FILE]). This review goes to the risk committee, which expects disconfirming evidence.
+CONTEXT: Available: the current portfolio, the written investment thesis for each core position and recent performance (infy-20260331.htm). This review goes to the risk committee, which expects disconfirming evidence. Source: https://www.sec.gov/Archives/edgar/data/1067491/000119312526270520/infy-20260331.htm
 
 ROLE: Portfolio manager applying radical transparency to stress-test core assumptions.
 
@@ -458,12 +458,12 @@ TONE: Macro strategist. Scenarios, not forecasts. Attach a probability or say th
 ### PROMPT 20 — The Multi-Scenario Historical & Hypothetical Stress Test
 
 ```
-CONTEXT: Given [PORTFOLIO] position level exposures and asset class betas ([FILE]). The board sees these numbers, so each scenario shock must map to a stated historical reference.
+CONTEXT: Given NBIM_13F_2026Q2_holdings.csv position level exposures and asset class betas (NBIM_13F_2026Q2_holdings.csv). The board sees these numbers, so each scenario shock must map to a stated historical reference. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Managing Director at a large sell-side firm running the stress scenarios the board will see. Apply the standard you would defend in that room.
 
 ACTION:
-  1. Multi-scenario stress test for [PORTFOLIO]: 2022 Rate Shock (equities -18%, long bonds -31%), 2008 GFC (equities -38%, credit spread +300bps), 2020 COVID Crash (equities -34%, recovery V-shaped), custom scenario [DESCRIBE]. Portfolio P&L per position in each. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Multi-scenario stress test for NBIM_13F_2026Q2_holdings.csv: 2022 Rate Shock (equities -18%, long bonds -31%), 2008 GFC (equities -38%, credit spread +300bps), 2020 COVID Crash (equities -34%, recovery V-shaped), custom scenario the quarterly 13F refresh. Portfolio P&L per position in each. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Stress test results by position and scenario with comparison table.
 
@@ -477,12 +477,12 @@ TONE: Macro strategist. Scenarios, not forecasts. Attach a probability or say th
 ### PROMPT 21 — The Institutional Tail Risk Quantification & Hedging Framework
 
 ```
-CONTEXT: Working from [PORTFOLIO] daily returns over [PERIOD] ([FILE]) and current option pricing in tab two. Hedging budget is capped at [X]% of assets per year.
+CONTEXT: Working from SNB_13F_2026Q2_holdings.csv daily returns over quarter ended 30 June 2026 (SNB_13F_2026Q2_holdings.csv) and current option pricing in tab two. Hedging budget is capped at [X]% of assets per year. Source: https://www.sec.gov/Archives/edgar/data/1582202/000158220226000007/InfoTable_Q22026.xml
 
 ROLE: Institutional risk analyst quantifying tail risk and hedging costs.
 
 ACTION:
-  1. Tail risk quantification for [PORTFOLIO]. CVaR at 95% and 99%. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Tail risk quantification for SNB_13F_2026Q2_holdings.csv. CVaR at 95% and 99%. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Tail risk metrics with hedging recommendations and cost analysis.
 
@@ -496,12 +496,12 @@ TONE: Macro strategist. Scenarios, not forecasts. Attach a probability or say th
 ### PROMPT 22 — The Multi-Currency Portfolio FX Exposure & Hedging Strategy
 
 ```
-CONTEXT: Attached: [PORTFOLIO] holdings with listing currency, plus revenue by geography for the largest positions ([FILE]). Base currency is [CUR]. Hedging policy permits forwards only.
+CONTEXT: Attached: the US-listed equity sleeve (NBIM_13F_2026Q2_holdings.csv), plus listing currency and revenue by geography for the largest positions, taken from their own filings. Base currency is USD. Hedging policy permits forwards only. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Portfolio strategist managing multi-currency FX exposure and hedge ratios.
 
 ACTION:
-  1. FX exposure analysis for [PORTFOLIO]. Map all positions to underlying currency exposures including indirect (e.g.
+  1. FX exposure analysis for NBIM_13F_2026Q2_holdings.csv. Map all positions to underlying currency exposures including indirect (e.g.
 
 FORMAT: FX exposure map with hedge ratio recommendation and instrument selection.
 
@@ -515,12 +515,12 @@ TONE: Macro strategist. Scenarios, not forecasts. Attach a probability or say th
 ### PROMPT 23 — The Portfolio Liquidity Profile & Redemption Risk Analysis
 
 ```
-CONTEXT: Every [PORTFOLIO] position carries average daily traded volume and bid ask spreads in [FILE]. The fund offers [FREQUENCY] redemption, so exit timelines bound the answer.
+CONTEXT: Average daily traded volume and bid ask spreads for every position in NBIM_13F_2026Q2_holdings.csv come from your own market-data feed. The 13F supplies the positions only. The fund offers quarterly redemption, so exit timelines bound the answer. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Liquidity risk analyst profiling portfolio exit timelines and redemption capacity.
 
 ACTION:
-  1. Liquidity profile for [PORTFOLIO]. For each position: daily ADTV, days to liquidate at 20% ADTV, market impact estimate.
+  1. Liquidity profile for NBIM_13F_2026Q2_holdings.csv. For each position: daily ADTV, days to liquidate at 20% ADTV, market impact estimate.
 
 FORMAT: Liquidity profile with exit timeline by position and redemption scenario.
 
@@ -534,12 +534,12 @@ TONE: Macro strategist. Scenarios, not forecasts. Attach a probability or say th
 ### PROMPT 24 — The Portfolio Drawdown Attribution & Recovery Analysis
 
 ```
-CONTEXT: Position level returns for [PORTFOLIO] over [PERIOD] are in [FILE], with benchmark and factor return series. The committee wants factor losses separated from selection losses.
+CONTEXT: Position level returns for the holdings in SNB_13F_2026Q2_holdings.csv over quarter ended 30 June 2026, with benchmark and factor return series from your own files. The committee wants factor losses separated from selection losses. Source: https://www.sec.gov/Archives/edgar/data/1582202/000158220226000007/InfoTable_Q22026.xml
 
 ROLE: Managing Director at a large sell-side firm attributing drawdown sources for the board. Separate factor losses from selection losses as you would defend them in that room.
 
 ACTION:
-  1. Drawdown attribution for [PORTFOLIO] over [PERIOD]. Decompose total drawdown into: factor contributions (growth, value, quality, momentum), sector contributions, and idiosyncratic stock contributions. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Drawdown attribution for SNB_13F_2026Q2_holdings.csv over quarter ended 30 June 2026. Decompose total drawdown into: factor contributions (growth, value, quality, momentum), sector contributions, and idiosyncratic stock contributions. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Drawdown attribution table with factor and stock decomposition.
 
@@ -555,12 +555,12 @@ TONE: Macro strategist. Scenarios, not forecasts. Attach a probability or say th
 ### PROMPT 25 — The Institutional Pre-Earnings Intelligence Brief
 
 ```
-CONTEXT: [COMPANY] reports in [N] days. Available: the last four transcripts, current consensus estimates and the desk model ([FILE]). Actions must be committed before the print, not after.
+CONTEXT: Shell plc reports in [N] days. Available: its annual filing (shel-20251231.htm), the last four transcripts, current consensus estimates and the desk model. Actions must be committed before the print, not after. Source: https://www.sec.gov/Archives/edgar/data/1306965/000162828026017024/shel-20251231.htm
 
 ROLE: Managing Director at a large sell-side firm signing off on the pre-earnings brief before the print. Apply the standard you would defend after the result is known.
 
 ACTION:
-  1. Pre-earnings intelligence brief for [COMPANY], reporting in [N] days. Three thesis-critical KPIs with consensus estimate and your estimate.
+  1. Pre-earnings intelligence brief for Shell plc, reporting in [N] days. Three thesis-critical KPIs with consensus estimate and your estimate.
 
 FORMAT: Pre-earnings brief with decision matrix. Commit all actions before the print.
 
@@ -574,12 +574,12 @@ TONE: Earnings desk. Separate what management said from what the numbers show. N
 ### PROMPT 26 — The Management Tone Trajectory Analysis
 
 ```
-CONTEXT: Attached: the last four [COMPANY] earnings call transcripts ([FILE]), prepared remarks and Q&A separated. Ratings feed a coverage note, so each one needs a quoted line.
+CONTEXT: Attached: the last four SAP SE earnings call transcripts, prepared remarks and Q&A separated, with its annual filing (sap-20251231x20f.htm) alongside. Ratings feed a coverage note, so each one needs a quoted line. Source: https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm
 
 ROLE: Senior research analyst applying systematic management tone analysis.
 
 ACTION:
-  1. Analyse last four earnings call transcripts for [COMPANY]. Per quarter: rate CONSTRUCTIVE/NEUTRAL/CAUTIOUS/MORE CAUTIOUS.
+  1. Analyse last four earnings call transcripts for SAP SE. Per quarter: rate CONSTRUCTIVE/NEUTRAL/CAUTIOUS/MORE CAUTIOUS.
 
 FORMAT: Tone trajectory table with keyword frequency shifts and synthesis.
 
@@ -593,12 +593,12 @@ TONE: Earnings desk. Separate what management said from what the numbers show. N
 ### PROMPT 27 — The Management Guidance Reliability Scorecard
 
 ```
-CONTEXT: You have eight quarters of [COMPANY] guidance statements and reported actuals ([FILE]). Guided ranges changed definition midway. The scorecard informs how much weight next quarter's guidance carries.
+CONTEXT: You have eight quarters of Microsoft Corp guidance statements and reported actuals (msft-20260630.htm). Guided ranges changed definition midway. The scorecard informs how much weight next quarter's guidance carries. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Equity analyst building a guidance quality and credibility scorecard.
 
 ACTION:
-  1. Guidance quality analysis for [COMPANY] over last 8 quarters. For each: guided metric, guided range, actual result, beat/miss, magnitude.
+  1. Guidance quality analysis for Microsoft Corp over last 8 quarters. For each: guided metric, guided range, actual result, beat/miss, magnitude.
 
 FORMAT: Guidance accuracy scorecard with credibility rating and bias assessment.
 
@@ -612,12 +612,12 @@ TONE: Earnings desk. Separate what management said from what the numbers show. N
 ### PROMPT 28 — The Institutional Segment-Level Revenue Intelligence Framework
 
 ```
-CONTEXT: Given [COMPANY] segment disclosures across the last eight quarters plus matching management commentary ([FILE]). Segment definitions were restated once. Output feeds a thesis check on mix.
+CONTEXT: Given Infosys Ltd segment disclosures across the last eight quarters plus matching management commentary (infy-20260331.htm). Segment definitions were restated once. Output feeds a thesis check on mix. Source: https://www.sec.gov/Archives/edgar/data/1067491/000119312526270520/infy-20260331.htm
 
 ROLE: Sector analyst decomposing segment-level revenue and mix dynamics.
 
 ACTION:
-  1. Segment revenue intelligence for [COMPANY]. For each segment: revenue, growth rate, margin, management commentary. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Segment revenue intelligence for Infosys Ltd. For each segment: revenue, growth rate, margin, management commentary. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Segment decomposition with emphasis analysis and mix attribution.
 
@@ -631,12 +631,12 @@ TONE: Earnings desk. Separate what management said from what the numbers show. N
 ### PROMPT 29 — The Forensic Earnings Quality & Cash Conversion Analysis
 
 ```
-CONTEXT: Working from [COMPANY] income statements, cash flow statements and balance sheets for [N] years ([FILE]). Only audited figures are available; restatement history sits in tab two.
+CONTEXT: Working from Shell plc income statements, cash flow statements and balance sheets for [N] years (shel-20251231.htm). Only audited figures are available; restatement history sits in tab two. Source: https://www.sec.gov/Archives/edgar/data/1306965/000162828026017024/shel-20251231.htm
 
 ROLE: Forensic analyst assessing earnings quality and cash conversion.
 
 ACTION:
-  1. Forensic earnings quality analysis for [COMPANY]. Sloan accruals ratio (should be near zero). Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Forensic earnings quality analysis for Shell plc. Sloan accruals ratio (should be near zero). Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Earnings quality scorecard with red flags and cash conversion analysis.
 
@@ -650,12 +650,12 @@ TONE: Earnings desk. Separate what management said from what the numbers show. N
 ### PROMPT 30 — The Consensus Estimate Positioning & Expectations Framework
 
 ```
-CONTEXT: Attached: analyst ratings, estimate revisions and short interest for [COMPANY] ahead of [EVENT] ([FILE]). Positioning data lags by [N] days. The read informs sizing, not direction.
+CONTEXT: Attached: analyst ratings, estimate revisions and short interest for SAP SE from your own positioning data, ahead of the FY2026 results announcement, with its annual filing (sap-20251231x20f.htm). Positioning data lags by [N] days. The read informs sizing, not direction. Source: https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm
 
 ROLE: Senior analyst mapping consensus positioning and sentiment extremes.
 
 ACTION:
-  1. Consensus positioning analysis for [COMPANY] before [EVENT]. % of analysts with buy/hold/sell ratings.
+  1. Consensus positioning analysis for SAP SE before the FY2026 results announcement. % of analysts with buy/hold/sell ratings.
 
 FORMAT: Consensus positioning map with sentiment extremes identified.
 
@@ -669,12 +669,12 @@ TONE: Earnings desk. Separate what management said from what the numbers show. N
 ### PROMPT 31 — The Institutional Post-Earnings Position Management
 
 ```
-CONTEXT: [COMPANY] has reported [RESULT]. The pre-committed decision matrix and thesis document are in [FILE]. The record must show the matrix decided, so no new reasoning is introduced.
+CONTEXT: Microsoft Corp has reported the FY2026 reported figures. The pre-committed decision matrix and thesis document are in msft-20260630.htm. The record must show the matrix decided, so no new reasoning is introduced. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Managing Director at a large sell-side firm executing the pre-committed post-earnings protocol. Apply the standard you would defend to the committee: the matrix decides, the record shows it.
 
 ACTION:
-  1. Post-earnings position management protocol for [COMPANY] following [RESULT]. Assess: did KPIs meet pre-committed thresholds? Apply pre-committed decision matrix.
+  1. Post-earnings position management protocol for Microsoft Corp following the FY2026 reported figures. Assess: did KPIs meet pre-committed thresholds? Apply pre-committed decision matrix.
 
 FORMAT: Post-earnings decision record with thesis update and position action.
 
@@ -688,7 +688,7 @@ TONE: Earnings desk. Separate what management said from what the numbers show. N
 ### PROMPT 32 — The Multi-Company Earnings Season Monitoring
 
 ```
-CONTEXT: Available: reporting dates for [N] coverage names and the existing thesis file ([FILE]). Several names report on the same day. The dashboard is updated daily through the season.
+CONTEXT: Available: reporting dates for [N] coverage names and the existing thesis file (infy-20260331.htm). Several names report on the same day. The dashboard is updated daily through the season. Source: https://www.sec.gov/Archives/edgar/data/1067491/000119312526270520/infy-20260331.htm
 
 ROLE: Research team lead managing multi-company earnings season monitoring.
 
@@ -709,7 +709,7 @@ TONE: Earnings desk. Separate what management said from what the numbers show. N
 ### PROMPT 33 — The Institutional Investment Policy Statement Construction
 
 ```
-CONTEXT: Available: [CLIENT/FUND] financial position, stated objectives and the trustee minutes covering constraints ([FILE]). The client signs this document, so every constraint needs a clause reference.
+CONTEXT: Available: [CLIENT/FUND] financial position, stated objectives and the trustee minutes covering constraints (shel-20251231.htm). The client signs this document, so every constraint needs a clause reference. Source: https://www.sec.gov/Archives/edgar/data/1306965/000162828026017024/shel-20251231.htm
 
 ROLE: Managing Director at a large sell-side firm constructing the Investment Policy Statement the client will sign. Apply the standard you would defend to the investment committee.
 
@@ -729,12 +729,12 @@ TONE: Portfolio strategy. Positions framed against a stated policy benchmark. No
 ### PROMPT 34 — The Strategic Asset Allocation & Risk Budgeting Framework
 
 ```
-CONTEXT: You have the [FUND] IPS, long term capital market assumptions and a correlation matrix ([FILE]). Alternatives are capped at [X]% by mandate. Assumptions carry a stated vintage.
+CONTEXT: You have Government Pension Fund Global's published IPS, long term capital market assumptions and a correlation matrix, with its US-listed sleeve in NBIM_13F_2026Q2_holdings.csv. Alternatives are capped at [X]% by mandate. Assumptions carry a stated vintage. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Senior portfolio manager building strategic asset allocation and risk budget.
 
 ACTION:
-  1. Strategic Asset Allocation for [FUND]. Asset classes: global equity, fixed income, alternatives, real assets, cash. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Strategic Asset Allocation for Government Pension Fund Global. Asset classes: global equity, fixed income, alternatives, real assets, cash. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: SAA with efficient frontier analysis and risk budget allocation.
 
@@ -748,12 +748,12 @@ TONE: Portfolio strategy. Positions framed against a stated policy benchmark. No
 ### PROMPT 35 — The Tactical Asset Allocation & Factor Tilt Protocol
 
 ```
-CONTEXT: Attached: the [FUND] strategic allocation and current market conditions summary ([FILE]). Tactical deviation is limited to [X]% per asset class. Tilts are reviewed at the next quarterly meeting.
+CONTEXT: Attached: Government Pension Fund Global's published strategic allocation and a market conditions summary, with its US-listed sleeve in NBIM_13F_2026Q2_holdings.csv. Tactical deviation is limited to [X]% per asset class. Tilts are reviewed at the next quarterly meeting. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Tactical strategist designing active tilts around the strategic allocation.
 
 ACTION:
-  1. Tactical asset allocation overlay for [FUND] vs SAA. Current market conditions: [DESCRIBE BRIEFLY].
+  1. Tactical asset allocation overlay for Government Pension Fund Global vs SAA. Current market conditions: the quarterly 13F refresh.
 
 FORMAT: TAA overlay with specific tilts, rationale, and reversal conditions.
 
@@ -767,12 +767,12 @@ TONE: Portfolio strategy. Positions framed against a stated policy benchmark. No
 ### PROMPT 36 — The GIPS-Compliant Performance Reporting Framework
 
 ```
-CONTEXT: Given [COMPOSITE] account level returns, cash flows and fee schedules for [DATES] ([FILE]). The report goes to prospective clients, so required disclosures cannot be abbreviated.
+CONTEXT: Given the NIFTY 50 constituent list (NSE_Nifty50_constituents.csv, symbol in column 3), plus account level returns, cash flows and fee schedules for 1 April 2026 to 30 June 2026. The report goes to prospective clients, so required disclosures cannot be abbreviated. Source: https://nsearchives.nseindia.com/content/indices/ind_nifty50list.csv
 
 ROLE: GIPS-compliant performance reporting specialist.
 
 ACTION:
-  1. GIPS-compliant performance reporting for [COMPOSITE] for period [DATES]. Time-weighted return calculation. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. GIPS-compliant performance reporting for the NIFTY 50 constituent list for period 1 April 2026 to 30 June 2026. Time-weighted return calculation. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: GIPS-compliant performance report with all required disclosures.
 
@@ -786,12 +786,12 @@ TONE: Portfolio strategy. Positions framed against a stated policy benchmark. No
 ### PROMPT 37 — The Institutional Portfolio Rebalancing Policy & Execution
 
 ```
-CONTEXT: Working from [FUND] current weights, target weights and broker cost estimates ([FILE]). The policy band is [X]% per asset class. Trades settle before the quarter end reporting date.
+CONTEXT: Working from the Swiss National Bank's US-listed sleeve (SNB_13F_2026Q2_holdings.csv), with target weights and broker cost estimates in your own files. The policy band is [X]% per asset class. Trades settle before the quarter end reporting date. Source: https://www.sec.gov/Archives/edgar/data/1582202/000158220226000007/InfoTable_Q22026.xml
 
 ROLE: Portfolio operations analyst managing rebalancing policy and execution.
 
 ACTION:
-  1. Portfolio rebalancing analysis for [FUND]. Current weights vs SAA targets.
+  1. Portfolio rebalancing analysis for Government Pension Fund Global. Current weights vs SAA targets.
 
 FORMAT: Rebalancing trade list with cost analysis and execution priority.
 
@@ -805,12 +805,12 @@ TONE: Portfolio strategy. Positions framed against a stated policy benchmark. No
 ### PROMPT 38 — The Multi-Asset Portfolio Construction & Optimisation
 
 ```
-CONTEXT: [MANDATE] terms, the eligible instrument list and available return assumptions are in [FILE]. The blueprint goes to the investment committee for approval before any capital is deployed.
+CONTEXT: A global equity mandate's terms, the eligible instrument list and the return assumptions are in your own mandate file. The blueprint goes to the investment committee for approval before any capital is deployed. Input: your own file, not a public filing.
 
 ROLE: Multi-asset portfolio construction specialist.
 
 ACTION:
-  1. Multi-asset portfolio construction for [MANDATE]. Asset class selection rationale.
+  1. Multi-asset portfolio construction for a global equity mandate. Asset class selection rationale.
 
 FORMAT: Portfolio construction blueprint with diversification analysis.
 
@@ -824,12 +824,12 @@ TONE: Portfolio strategy. Positions framed against a stated policy benchmark. No
 ### PROMPT 39 — The Client Portfolio Review & Communication Framework
 
 ```
-CONTEXT: Attached: [CLIENT] portfolio performance, the signed IPS and stated goals with target dates ([FILE]). The client's investment committee reads this, so plain language matters as much as accuracy.
+CONTEXT: Attached: a UK-domiciled pension scheme's portfolio performance, the signed IPS and stated goals with target dates, all client-provided. The client's investment committee reads this, so plain language matters as much as accuracy. Input: your own file, not a public filing.
 
 ROLE: Managing Director at a large sell-side firm presenting the portfolio review to the client's investment committee. Apply the standard you would defend in that room.
 
 ACTION:
-  1. Client portfolio review for [CLIENT]. Performance vs IPS return objective.
+  1. Client portfolio review for a UK-domiciled pension scheme. Performance vs IPS return objective.
 
 FORMAT: Client review package with performance, risk, goals, and recommendations.
 
@@ -843,12 +843,12 @@ TONE: Portfolio strategy. Positions framed against a stated policy benchmark. No
 ### PROMPT 40 — The Institutional Risk-Adjusted Return Analysis
 
 ```
-CONTEXT: You have [PORTFOLIO] and benchmark return series over [PERIOD] plus holdings history ([FILE]). Attribution feeds a manager review, so factor returns and selection returns stay separate.
+CONTEXT: You have the US-listed equity sleeve in NBIM_13F_2026Q2_holdings.csv, with the benchmark return series and holdings history for quarter ended 30 June 2026 in your own files. Attribution feeds a manager review, so factor returns and selection returns stay separate. State the risk-free rate you are using. Every ratio below moves with it. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Risk-adjusted performance analyst decomposing attribution by decision type.
 
 ACTION:
-  1. Risk-adjusted return analysis for [PORTFOLIO] over [PERIOD]. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Risk-adjusted return analysis for NBIM_13F_2026Q2_holdings.csv over quarter ended 30 June 2026. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
   2. Sharpe ratio, Sortino ratio, Calmar ratio, Information ratio vs benchmark.
 
 FORMAT: Risk-adjusted return report with full attribution decomposition.
@@ -865,12 +865,12 @@ TONE: Portfolio strategy. Positions framed against a stated policy benchmark. No
 ### PROMPT 41 — The Statistical Edge Discovery & Pattern Analysis
 
 ```
-CONTEXT: Attached: [TICKER] daily price history covering [PERIOD] ([FILE]) plus the event calendar. Findings feed the research committee, so any pattern without sample size stays out.
+CONTEXT: Attached: Apple Inc. daily price history for FY2025 (year ended 31 December 2025) from your own market-data feed, its annual filing (aapl-20250927.htm) and the event calendar. Findings feed the research committee, so any pattern without sample size stays out. Source: https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm
 
 ROLE: Quantitative researcher identifying statistically significant, economically-justified patterns.
 
 ACTION:
-  1. Identify statistically significant patterns for [TICKER] over [TIME PERIOD]. Seasonal patterns: best/worst calendar months with p-value and sample size.
+  1. Search Apple Inc. for a tradable edge and report how many hypotheses you tested. Seasonal patterns: best and worst calendar months, with p-value, sample size and a multiple-testing correction.
 
 FORMAT: Pattern table with p-values, sample sizes, and economic rationale. Exclude any pattern without a credible economic explanation.
 
@@ -884,12 +884,12 @@ TONE: Quant reviewer who must defend the verdict, not the strategy. Paper result
 ### PROMPT 42 — The Technical Analysis & Chart Pattern Recognition Protocol
 
 ```
-CONTEXT: You have daily, weekly and monthly price series for [TICKER] in [FILE], nothing fundamental. The desk trades this book intraday, so levels must be current as of [DATE].
+CONTEXT: You have daily, weekly and monthly price series for SAP SE from your own market-data feed, nothing fundamental. The desk trades this book intraday, so levels must be current as of FY2025 (year ended 31 December 2025). Input: your own file, not a public filing.
 
 ROLE: Technical analyst applying multi-timeframe trend and momentum analysis.
 
 ACTION:
-  1. Technical analysis for [TICKER]. Trend identification: daily/weekly/monthly alignment.
+  1. Technical analysis for SAP. Trend identification: daily/weekly/monthly alignment.
 
 FORMAT: Technical analysis brief with entry/stop/target and R:R flagged if below 2:1.
 
@@ -903,12 +903,12 @@ TONE: Quant reviewer who must defend the verdict, not the strategy. Paper result
 ### PROMPT 43 — The Options Strategy & Derivatives Analysis
 
 ```
-CONTEXT: Available: the option chain for [UNDERLYING] as of [DATE] close, plus 30 and 90 day realised volatility. Mandate permits defined-risk structures only; naked short options are excluded.
+CONTEXT: Available: the option chain for the S&P 500 as of FY2025 (year ended 31 December 2025) close, plus 30 and 90 day realised volatility. Mandate permits defined-risk structures only; naked short options are excluded. Input: your own file, not a public filing.
 
 ROLE: Derivatives specialist analysing options strategies and Greeks.
 
 ACTION:
-  1. Options strategy analysis for [UNDERLYING]. Current implied vol vs historical vol: is optionality cheap or expensive? Relevant strategies: covered call, protective put, collar, straddle/strangle.
+  1. Options strategy analysis for the S&P 500. Current implied vol vs historical vol: is optionality cheap or expensive? Relevant strategies: covered call, protective put, collar, straddle/strangle.
 
 FORMAT: Options strategy comparison with P&L profiles and Greeks.
 
@@ -922,12 +922,12 @@ TONE: Quant reviewer who must defend the verdict, not the strategy. Paper result
 ### PROMPT 44 — The Institutional Investment Strategy Backtesting Engine
 
 ```
-CONTEXT: Price and signal data for [UNIVERSE] across [PERIOD] sit in [FILE]. Results go to the risk committee, which rejects any backtest without an untouched out-of-sample window.
+CONTEXT: Price and signal data for 1,617 US-listed holdings across quarter ended 30 June 2026 sit in NBIM_13F_2026Q2_holdings.csv. Results go to the risk committee, which rejects any backtest without an untouched out-of-sample window. Fix the in-sample and out-of-sample split date before you look at a single result. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Quantitative strategist running systematic backtesting with walk-forward validation.
 
 ACTION:
-  1. Backtest [STRATEGY] on [UNIVERSE] over [PERIOD]. Signal: [DESCRIBE LOGIC].
+  1. Backtest a passive global equity strategy on 1,617 US-listed holdings over quarter ended 30 June 2026. Signal: rank holdings by weight and flag any above 5 percent.
 
 FORMAT: Backtest results with walk-forward validation. In-sample and out-of-sample reported separately.
 
@@ -941,12 +941,12 @@ TONE: Quant reviewer who must defend the verdict, not the strategy. Paper result
 ### PROMPT 45 — The High-Frequency Signal & Market Microstructure Analysis
 
 ```
-CONTEXT: Order book snapshots, the trade tape and short interest for [TICKER] are in [FILE], vintage [DATE]. The execution desk uses this before sizing the next order.
+CONTEXT: Order book snapshots, the trade tape and short interest for Apple Inc. come from your own market-data feed, vintage FY2025 (year ended 31 December 2025). The execution desk uses this before sizing the next order. Input: your own file, not a public filing.
 
 ROLE: Market microstructure analyst assessing order flow and institutional positioning.
 
 ACTION:
-  1. Market microstructure analysis for [TICKER]. Bid-ask spread: current vs historical average.
+  1. Market microstructure analysis for Apple Inc. Bid-ask spread: current vs historical average.
 
 FORMAT: Microstructure signals with order flow and short interest analysis.
 
@@ -960,7 +960,7 @@ TONE: Quant reviewer who must defend the verdict, not the strategy. Paper result
 ### PROMPT 46 — The Cross-Asset Momentum & Relative Value Framework
 
 ```
-CONTEXT: Attached: twenty years of yield and valuation history for [ASSET CLASS 1] and [ASSET CLASS 2] ([FILE]). Output feeds the quarterly asset allocation meeting.
+CONTEXT: Attached: twenty years of yield and valuation history for [ASSET CLASS 1] and [ASSET CLASS 2] (shel-20251231.htm). Output feeds the quarterly asset allocation meeting. Source: https://www.sec.gov/Archives/edgar/data/1306965/000162828026017024/shel-20251231.htm
 
 ROLE: Cross-asset strategist building relative value and momentum frameworks.
 
@@ -979,12 +979,12 @@ TONE: Quant reviewer who must defend the verdict, not the strategy. Paper result
 ### PROMPT 47 — The Quantitative Portfolio Optimisation
 
 ```
-CONTEXT: Expected returns, the covariance matrix and current holdings for [UNIVERSE] are supplied in [FILE]. Mandate caps any single position at [X]% and any sector at [X]%.
+CONTEXT: Current holdings for the 1,617 US-listed names are in NBIM_13F_2026Q2_holdings.csv, with expected returns and the covariance matrix from your own files. Mandate caps any single position at [X]% and any sector at [X]%. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Portfolio optimisation specialist applying mean-variance with constraints.
 
 ACTION:
-  1. Quantitative portfolio optimisation for [UNIVERSE]. Inputs: expected returns (factor model), covariance matrix (historical + shrinkage), constraints (max position [X]%, max sector [X]%, min diversification).
+  1. Quantitative portfolio optimisation for 1,617 US-listed holdings. Inputs: expected returns (factor model), covariance matrix (historical + shrinkage), constraints (max position [X]%, max sector [X]%, min diversification).
 
 FORMAT: Optimal portfolio weights with efficient frontier and sensitivity analysis.
 
@@ -998,12 +998,12 @@ TONE: Quant reviewer who must defend the verdict, not the strategy. Paper result
 ### PROMPT 48 — The Institutional Trade Plan & Risk Management
 
 ```
-CONTEXT: Nothing has been bought yet. Research, price levels and position limits for [TICKER] sit in [FILE]; the plan is defended at the risk committee before any order goes out.
+CONTEXT: Nothing has been bought yet. Research, price levels and position limits for Apple sit in aapl-20250927.htm; the plan is defended at the risk committee before any order goes out. Source: https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm
 
 ROLE: Head of trading at a multi-strategy fund, constructing the pre-committed trade plan to be defended before the risk committee.
 
 ACTION:
-  1. Complete trade plan for [TICKER] before initiating any position.
+  1. Complete trade plan for Apple Inc. before initiating any position.
   2. Investment thesis: 2 sentences.
 
 FORMAT: Complete pre-committed trade plan. All levels documented before any position is taken.
@@ -1020,7 +1020,7 @@ TONE: Quant reviewer who must defend the verdict, not the strategy. Paper result
 ### PROMPT 49 — The Institutional Competitive Landscape & Market Structure
 
 ```
-CONTEXT: Attached: filings and revenue disclosures for the largest listed players in [SECTOR] ([FILE]). Figures are last reported fiscal year. The map feeds an initiation report.
+CONTEXT: Attached: filings and revenue disclosures for the largest listed players in Information Technology (msft-20260630.htm). Figures are last reported fiscal year. The map feeds an initiation report. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Senior strategy analyst mapping competitive landscape and market structure.
 
@@ -1039,12 +1039,12 @@ TONE: Consulting register. Recommendations tied to stated evidence. Flag every a
 ### PROMPT 50 — The Porter Five Forces Industry Attractiveness Framework
 
 ```
-CONTEXT: You have industry revenue, margin and capacity data for [INDUSTRY] in [FILE]. The scorecard supports a sector weighting decision, so each rating needs named evidence behind it.
+CONTEXT: You have industry revenue, margin and capacity data for Information Technology in infy-20260331.htm. The scorecard supports a sector weighting decision, so each rating needs named evidence behind it. Source: https://www.sec.gov/Archives/edgar/data/1067491/000119312526270520/infy-20260331.htm
 
 ROLE: Industry analyst applying Porter's Five Forces framework.
 
 ACTION:
-  1. Porter Five Forces analysis for [INDUSTRY]. Each force: rate intensity LOW/MEDIUM/HIGH with specific evidence.
+  1. Porter Five Forces analysis for Information Technology. Each force: rate intensity LOW/MEDIUM/HIGH with specific evidence.
 
 FORMAT: Five Forces scorecard with attractiveness rating and investment implication.
 
@@ -1058,12 +1058,12 @@ TONE: Consulting register. Recommendations tied to stated evidence. Flag every a
 ### PROMPT 51 — The Competitive Advantage Period & Moat Width Assessment
 
 ```
-CONTEXT: Ten years of returns on capital, pricing and market share for [COMPANY] are available in [FILE]. The estimate drives the fade period in a valuation model.
+CONTEXT: Ten years of returns on capital, pricing and market share for JPMorgan Chase are available in jpm-20251231.htm. The estimate drives the fade period in a valuation model. Source: https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm
 
 ROLE: Equity analyst assessing competitive advantage period and moat durability.
 
 ACTION:
-  1. Competitive advantage period (CAP) assessment for [COMPANY]. For each moat type present (brand, cost, network, switching): evidence, durability (years), trajectory.
+  1. Competitive advantage period (CAP) assessment for JPMorgan Chase. For each moat type present (brand, cost, network, switching): evidence, durability (years), trajectory.
 
 FORMAT: Moat width assessment with CAP estimate and durability evidence.
 
@@ -1077,13 +1077,13 @@ TONE: Consulting register. Recommendations tied to stated evidence. Flag every a
 ### PROMPT 52 — The Channel-Level Market Share & Competitive Dynamics Framework
 
 ```
-CONTEXT: Distributor and retailer shipment data covering eight quarters for [COMPANY] and [COMPETITOR] sit in [FILE]. Channel definitions vary by region and must be stated before comparison.
+CONTEXT: Deposit and branch share data covering eight quarters for JPMorgan Chase and Bank of America sit in jpm-20251231.htm. Channel definitions vary by region and must be stated before comparison. Source: https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm
 
 ROLE: Channel intelligence analyst tracking market share at the distribution level.
 
 ACTION:
-  1. Channel-level market share analysis for [COMPANY] vs [COMPETITOR].
-  2. Distribution channels: [LIST].
+  1. Channel-level market share analysis for JPMorgan Chase vs Bank of America.
+  2. Channels: branch, digital and intermediary deposits.
 
 FORMAT: Channel market share table with 8-quarter trend and divergence analysis.
 
@@ -1097,12 +1097,12 @@ TONE: Consulting register. Recommendations tied to stated evidence. Flag every a
 ### PROMPT 53 — The Institutional SWOT & Strategic Position Assessment
 
 ```
-CONTEXT: Attached: [COMPANY]'s latest annual report, the peer comparison in [FILE] and recent management commentary. Output goes into a client strategy review, so generic statements will be rejected.
+CONTEXT: Attached: Microsoft Corp's latest annual report, the peer comparison in msft-20260630.htm and recent management commentary. Output goes into a client strategy review, so generic statements will be rejected. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Strategic analyst building an evidence-backed SWOT assessment.
 
 ACTION:
-  1. SWOT analysis for [COMPANY]. Each item must have specific evidence and a magnitude estimate, not a generic statement.
+  1. SWOT analysis for Microsoft Corp. Each item must have specific evidence and a magnitude estimate, not a generic statement.
 
 FORMAT: Evidence-backed SWOT with strategic priorities and threat mitigation plan.
 
@@ -1116,12 +1116,12 @@ TONE: Consulting register. Recommendations tied to stated evidence. Flag every a
 ### PROMPT 54 — The Technology Disruption & Business Model
 
 ```
-CONTEXT: Available: [COMPANY]'s segment revenue breakdown plus competitor product announcements collected through [DATE]. The assessment feeds a position review scheduled for the next research meeting.
+CONTEXT: Available: JPMorgan Chase's segment revenue breakdown (jpm-20251231.htm) plus competitor product announcements collected through FY2025 (year ended 31 December 2025). The assessment feeds a position review scheduled for the next research meeting. Source: https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm
 
 ROLE: Technology disruption analyst evaluating competitive threat timelines.
 
 ACTION:
-  1. Technology disruption assessment for [COMPANY]. Identify 3-4 technology threats: what technology, which competitor is deploying it, timeline, potential revenue impact.
+  1. Technology disruption assessment for JPMorgan Chase. Identify 3-4 technology threats: what technology, which competitor is deploying it, timeline, potential revenue impact.
 
 FORMAT: Disruption threat assessment with timeline and response capability rating.
 
@@ -1135,12 +1135,12 @@ TONE: Consulting register. Recommendations tied to stated evidence. Flag every a
 ### PROMPT 55 — The Institutional Pricing Power & Revenue Quality Analysis
 
 ```
-CONTEXT: Five years of revenue, volume and gross margin detail for [COMPANY] and its peer set are in [FILE]. Segment reporting changed once inside the window.
+CONTEXT: Five years of revenue, volume and gross margin detail for Apple Inc. and its peer set are in aapl-20250927.htm. Segment reporting changed once inside the window. Source: https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm
 
 ROLE: Revenue quality analyst decomposing pricing power and margin flow-through.
 
 ACTION:
-  1. Pricing power analysis for [COMPANY]. Revenue decomposition: price contribution vs volume contribution last 5 years.
+  1. Pricing power analysis for Apple Inc.. Revenue decomposition: price contribution vs volume contribution last 5 years.
 
 FORMAT: Pricing power scorecard with margin flow-through and peer comparison.
 
@@ -1154,12 +1154,12 @@ TONE: Consulting register. Recommendations tied to stated evidence. Flag every a
 ### PROMPT 56 — The Single Best Investment Thesis Construction
 
 ```
-CONTEXT: Prior work on [COMPANY] sits in [FILE], including the model and the competitive review. The thesis is defended at investment committee, where the invalidating condition is asked for first.
+CONTEXT: Prior work on JPMorgan Chase sits in jpm-20251231.htm, including the model and the competitive review. The thesis is defended at investment committee, where the invalidating condition is asked for first. Source: https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm
 
 ROLE: Managing Director at a large sell-side firm, constructing the single best investment thesis to be defended before the investment committee.
 
 ACTION:
-  1. Single best investment thesis for [COMPANY]. What: one paragraph describing the business and why it is mispriced.
+  1. Single best investment thesis for JPMorgan Chase. What: one paragraph describing the business and why it is mispriced.
 
 FORMAT: Investment thesis document with catalyst, KPIs, and invalidating condition.
 
@@ -1175,12 +1175,12 @@ TONE: Consulting register. Recommendations tied to stated evidence. Flag every a
 ### PROMPT 57 — The Yale/Harvard Endowment SAA Framework
 
 ```
-CONTEXT: You have [INSTITUTION]'s current allocation, spending policy and liquidity schedule in [FILE]. The proposed allocation goes to the investment committee at its next quarterly meeting.
+CONTEXT: You have the endowment's allocation, spending policy and liquidity schedule in your own files, and its US-listed equity sleeve in SNB_13F_2026Q2_holdings.csv. The proposed allocation goes to the investment committee at its next quarterly meeting. Source: https://www.sec.gov/Archives/edgar/data/1582202/000158220226000007/InfoTable_Q22026.xml
 
 ROLE: CIO of the endowment, applying the Yale/Harvard SAA framework and presenting the allocation to the investment committee.
 
 ACTION:
-  1. Yale/Harvard endowment SAA framework for [INSTITUTION], [AUM].
+  1. Yale/Harvard endowment SAA framework for the endowment described above, at its stated total fund size.
   2. Asset classes: public equity, fixed income, PE/VC, real assets, hedge funds, real estate.
 
 FORMAT: Endowment SAA with spending policy sustainability analysis.
@@ -1195,12 +1195,12 @@ TONE: Endowment committee. Long-horizon language. Spending policy stated as a co
 ### PROMPT 58 — The Illiquidity Premium & Alternative Asset Allocation Protocol
 
 ```
-CONTEXT: Attached: [PORTFOLIO] holdings with commitment and distribution history ([FILE]). Realised premium figures are net of fees. Governance constraints on lock-up length sit in the policy statement.
+CONTEXT: Attached: the holdings in NBIM_13F_2026Q2_holdings.csv, with commitment and distribution history in your own files. Realised premium figures are net of fees. Governance constraints on lock-up length sit in the policy statement. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Alternative investments specialist quantifying illiquidity premium and budget.
 
 ACTION:
-  1. Illiquidity premium analysis for [PORTFOLIO]. For each illiquid asset class (PE, VC, real estate, infrastructure): expected return premium over liquid equivalent, historical realised premium, time horizon required, governance requirements.
+  1. Illiquidity premium analysis for NBIM_13F_2026Q2_holdings.csv. For each illiquid asset class (PE, VC, real estate, infrastructure): expected return premium over liquid equivalent, historical realised premium, time horizon required, governance requirements.
 
 FORMAT: Illiquidity premium table with budget calculation and governance requirements.
 
@@ -1214,7 +1214,7 @@ TONE: Endowment committee. Long-horizon language. Spending policy stated as a co
 ### PROMPT 59 — The Private Equity & Venture Capital Allocation Framework
 
 ```
-CONTEXT: Existing fund commitments by vintage year for [ENDOWMENT/FUND] are listed in [FILE]. The programme runs against an annual commitment budget approved by the trustees.
+CONTEXT: Existing fund commitments by vintage year for [ENDOWMENT/FUND] are listed in msft-20260630.htm. The programme runs against an annual commitment budget approved by the trustees. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: PE and VC allocation specialist designing vintage diversification strategy.
 
@@ -1233,12 +1233,12 @@ TONE: Endowment committee. Long-horizon language. Spending policy stated as a co
 ### PROMPT 60 — The Endowment Spending Policy & Perpetuity Assessment
 
 ```
-CONTEXT: Available: [INSTITUTION]'s spending history, gift inflows and long-run return assumptions ([FILE]). Trustees have asked whether the current rate survives a decade of lower real returns.
+CONTEXT: Available: the endowment's spending history, gift inflows and long-run return assumptions in your own files, with its equity sleeve in NBIM_13F_2026Q2_holdings.csv. Trustees have asked whether the current rate survives a decade of lower real returns. State your long-run real return assumption up front, because the perpetuity test turns on it. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: CIO of the endowment, stress-testing spending policy sustainability for the investment committee.
 
 ACTION:
-  1. Endowment spending policy analysis for [INSTITUTION]. Current spending rate vs long-run real return assumption.
+  1. Endowment spending policy analysis for Norges Bank (Government Pension Fund Global, Norway). Current spending rate vs long-run real return assumption.
 
 FORMAT: Spending policy sustainability model with three scenarios and rule options.
 
@@ -1252,12 +1252,12 @@ TONE: Endowment committee. Long-horizon language. Spending policy stated as a co
 ### PROMPT 61 — The Real Assets & Infrastructure Allocation Framework
 
 ```
-CONTEXT: Current real asset exposure and the inflation assumptions used by [PORTFOLIO] are in [FILE]. Direct holdings and listed proxies are recorded separately and should not be merged.
+CONTEXT: Current real asset exposure and the inflation assumptions used by SNB_13F_2026Q2_holdings.csv are in SNB_13F_2026Q2_holdings.csv. Direct holdings and listed proxies are recorded separately and should not be merged. Source: https://www.sec.gov/Archives/edgar/data/1582202/000158220226000007/InfoTable_Q22026.xml
 
 ROLE: Real assets allocation specialist mapping inflation linkage and income.
 
 ACTION:
-  1. Real assets allocation analysis for [PORTFOLIO]. Asset classes: listed infrastructure, direct infrastructure, farmland, timber, commodities, TIPS.
+  1. Real assets allocation analysis for SNB_13F_2026Q2_holdings.csv. Asset classes: listed infrastructure, direct infrastructure, farmland, timber, commodities, TIPS.
 
 FORMAT: Real assets allocation with inflation linkage and liquidity analysis.
 
@@ -1271,7 +1271,7 @@ TONE: Endowment committee. Long-horizon language. Spending policy stated as a co
 ### PROMPT 62 — The Manager Selection & Due Diligence Protocol
 
 ```
-CONTEXT: Attached: the manager's track record, team biographies and fee terms for [STRATEGY/ASSET CLASS] ([FILE]). The scorecard is tabled at the alternatives committee alongside two competing candidates.
+CONTEXT: Attached: the manager's track record, team biographies and fee terms for [STRATEGY/ASSET CLASS] (infy-20260331.htm). The scorecard is tabled at the alternatives committee alongside two competing candidates. Source: https://www.sec.gov/Archives/edgar/data/1067491/000119312526270520/infy-20260331.htm
 
 ROLE: Alternatives due diligence specialist scoring manager selection criteria.
 
@@ -1291,12 +1291,12 @@ TONE: Endowment committee. Long-horizon language. Spending policy stated as a co
 ### PROMPT 63 — The Endowment Rebalancing & Liquidity Management
 
 ```
-CONTEXT: Holdings, target bands, pending capital calls and expected distributions for [INSTITUTION] are in [FILE], priced as of [DATE]. Cash balances cover operating needs for one quarter.
+CONTEXT: The US-listed equity sleeve of Government Pension Fund Global, managed by Norges Bank Investment Management, is in NBIM_13F_2026Q2_holdings.csv, priced as of quarter ended 30 June 2026. Target bands, capital calls and distributions are in your own files. Cash balances cover operating needs for one quarter. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Endowment operations analyst managing rebalancing and liquidity.
 
 ACTION:
-  1. Endowment rebalancing and liquidity management for [INSTITUTION].
+  1. Endowment rebalancing and liquidity management for Norges Bank Investment Management (Government Pension Fund Global, Norway).
   2. Rebalancing triggers: which asset classes have drifted beyond bands? Cash generation: which illiquid positions have distributions pending? Capital calls: which commitments are due in next 12 months? Net liquidity position: surplus or deficit?
 
 FORMAT: Rebalancing priority list with liquidity position and capital call schedule.
@@ -1311,7 +1311,7 @@ TONE: Endowment committee. Long-horizon language. Spending policy stated as a co
 ### PROMPT 64 — The Multi-Generational Wealth Preservation Framework
 
 ```
-CONTEXT: The investment policy statement and beneficiary obligations for [FAMILY/INSTITUTION] sit in [FILE]. Family governance is informal today, and the framework has to work without full-time staff.
+CONTEXT: The investment policy statement and beneficiary obligations for [FAMILY/INSTITUTION] sit in your own governance file. Family governance is informal today, and the framework has to work without full-time staff. Input: your own file, not a public filing.
 
 ROLE: Family office or endowment strategist designing multi-generational framework.
 
@@ -1332,12 +1332,12 @@ TONE: Endowment committee. Long-horizon language. Spending policy stated as a co
 ### PROMPT 65 — The NBIM Norway GPFG Total Portfolio Framework
 
 ```
-CONTEXT: Attached: [SOVEREIGN FUND]'s current holdings, benchmark definitions and the mandate letter ([FILE]). The framework is presented to the board, which approves benchmarks rather than individual positions.
+CONTEXT: Attached: Government Pension Fund Global's US-listed equity sleeve (NBIM_13F_2026Q2_holdings.csv), with benchmark definitions and the mandate letter in your own files. The framework is presented to the board, which approves benchmarks rather than individual positions. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: CIO of the sovereign wealth fund, presenting the total portfolio framework to the board.
 
 ACTION:
-  1. Total portfolio framework for [SOVEREIGN FUND], [$AUM]. SAA: equity/fixed income/real assets target weights with rationale.
+  1. Total portfolio framework for Government Pension Fund Global, [$AUM]. SAA: equity/fixed income/real assets target weights with rationale.
 
 FORMAT: Total portfolio framework document with geographic allocation and mandate rationale.
 
@@ -1351,12 +1351,12 @@ TONE: Sovereign fund governance. Mandate language. Public accountability assumed
 ### PROMPT 66 — The Responsible Investment & ESG Integration Protocol
 
 ```
-CONTEXT: You have [INSTITUTION]'s existing exclusion list, voting record and the ethics council guidance in [FILE]. The policy is published, so every criterion must be testable by an outsider.
+CONTEXT: You have Norges Bank Investment Management's published exclusion list, voting record and Council on Ethics recommendations, and the fund's US-listed holdings in NBIM_13F_2026Q2_holdings.csv. The policy is published, so every criterion must be testable by an outsider. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Responsible investment officer designing ESG integration and engagement policy.
 
 ACTION:
-  1. Responsible investment and ESG integration protocol for [INSTITUTION]. Exclusion criteria: define categories and specific tests.
+  1. Responsible investment and ESG integration protocol for Norges Bank (Government Pension Fund Global, Norway). Exclusion criteria: define categories and specific tests.
 
 FORMAT: Responsible investment policy with exclusion criteria, engagement protocol, and reporting framework.
 
@@ -1370,12 +1370,12 @@ TONE: Sovereign fund governance. Mandate language. Public accountability assumed
 ### PROMPT 67 — The Geographic Diversification & Home Bias Analysis
 
 ```
-CONTEXT: Regional weights for [PORTFOLIO] and the corresponding global market cap and GDP weights are in [FILE], as of [DATE]. Domestic holdings carry a statutory floor.
+CONTEXT: Regional weights computed from the US-listed sleeve in NBIM_13F_2026Q2_holdings.csv, with global market cap and GDP weights from published index and national accounts data, as of quarter ended 30 June 2026. Domestic holdings carry a statutory floor. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Global portfolio strategist quantifying geographic diversification and home bias.
 
 ACTION:
-  1. Geographic diversification analysis for [PORTFOLIO]. Current geographic weights vs global market cap weights.
+  1. Geographic diversification analysis for NBIM_13F_2026Q2_holdings.csv. Current geographic weights vs global market cap weights.
 
 FORMAT: Geographic diversification table with home bias quantification and recommendation.
 
@@ -1389,12 +1389,12 @@ TONE: Sovereign fund governance. Mandate language. Public accountability assumed
 ### PROMPT 68 — The Long-Horizon Factor Allocation Framework
 
 ```
-CONTEXT: Available: long-run factor return series and [SOVEREIGN FUND]'s current factor exposures ([FILE]). The fund has a multi-decade horizon and tolerates long stretches of factor underperformance.
+CONTEXT: Available: a long-run factor return series from a public factor library, and Government Pension Fund Global's US-listed equity sleeve (NBIM_13F_2026Q2_holdings.csv) for its current exposures. The fund has a multi-decade horizon and tolerates long stretches of factor underperformance. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Long-horizon factor allocation specialist applying sovereign mandate design.
 
 ACTION:
-  1. Long-horizon factor allocation framework for [SOVEREIGN FUND].
+  1. Long-horizon factor allocation framework for Government Pension Fund Global.
   2. Factors: market, size, value, quality, low volatility, momentum.
 
 FORMAT: Factor allocation framework with academic evidence and implementation guidance.
@@ -1409,12 +1409,12 @@ TONE: Sovereign fund governance. Mandate language. Public accountability assumed
 ### PROMPT 69 — The CPPIB Total Portfolio Approach
 
 ```
-CONTEXT: [INSTITUTION] currently runs an asset class budgeting model; the holdings and risk figures are in [FILE]. Total fund tracking error is capped at [X] basis points.
+CONTEXT: The Swiss National Bank runs an asset class budgeting model. Its US-listed equity sleeve is in SNB_13F_2026Q2_holdings.csv and the risk figures are in your own files. Total fund tracking error is capped at [X] basis points. Source: https://www.sec.gov/Archives/edgar/data/1582202/000158220226000007/InfoTable_Q22026.xml
 
 ROLE: Total portfolio approach specialist implementing the CPPIB framework.
 
 ACTION:
-  1. CPPIB Total Portfolio Approach implementation for [INSTITUTION].
+  1. CPPIB Total Portfolio Approach implementation for the Swiss National Bank.
   2. Reference portfolio: passive market cap-weighted equivalent.
 
 FORMAT: Total Portfolio Approach framework with reference portfolio and active risk budget.
@@ -1429,12 +1429,12 @@ TONE: Sovereign fund governance. Mandate language. Public accountability assumed
 ### PROMPT 70 — The Sovereign Credit & Fixed Income Allocation Protocol
 
 ```
-CONTEXT: Yield curves, spreads and ratings for the eligible universe sit in [FILE], marked as of [DATE]. [FUND]'s policy sets a minimum average credit quality and a duration band.
+CONTEXT: Yield curves, spreads and ratings for the eligible universe sit in your own fixed income files, marked as of quarter ended 30 June 2026. Government Pension Fund Global's policy sets a minimum average credit quality and a duration band. Input: your own file, not a public filing.
 
 ROLE: Fixed income strategist building sovereign credit and yield curve allocation.
 
 ACTION:
-  1. Sovereign credit and fixed income allocation for [FUND]. Universe: developed market sovereigns, EM sovereigns, IG credit.
+  1. Sovereign credit and fixed income allocation for Government Pension Fund Global. Universe: developed market sovereigns, EM sovereigns, IG credit.
 
 FORMAT: Fixed income allocation with duration analysis and yield curve positioning.
 
@@ -1448,12 +1448,12 @@ TONE: Sovereign fund governance. Mandate language. Public accountability assumed
 ### PROMPT 71 — The Currency Overlay & FX Risk Management
 
 ```
-CONTEXT: Attached: [PORTFOLIO] exposures by currency, including look-through on foreign revenue ([FILE]), plus forward points as of [DATE]. Base currency is [CUR] and hedging is centralised.
+CONTEXT: Attached: the US-listed equity sleeve (NBIM_13F_2026Q2_holdings.csv) for look-through on foreign revenue, with exposures by currency and forward points from your own market-data feed, as of quarter ended 30 June 2026. Base currency is USD and hedging is centralised. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Currency overlay specialist managing multi-currency exposure and hedging.
 
 ACTION:
-  1. Currency overlay framework for [PORTFOLIO]. Identify all currency exposures including indirect.
+  1. Currency overlay framework for NBIM_13F_2026Q2_holdings.csv. Identify all currency exposures including indirect.
 
 FORMAT: Currency overlay design with cost-benefit analysis per currency pair.
 
@@ -1467,12 +1467,12 @@ TONE: Sovereign fund governance. Mandate language. Public accountability assumed
 ### PROMPT 72 — The Governance & Accountability Reporting System
 
 ```
-CONTEXT: Current committee terms of reference and delegation limits for [SOVEREIGN INSTITUTION] are in [FILE]. Reporting is scrutinised publicly, and the framework has to survive that scrutiny.
+CONTEXT: Current committee terms of reference and delegation limits for the fund are in your own governance file. Reporting is scrutinised publicly, and the framework has to survive that scrutiny. Input: your own file, not a public filing.
 
 ROLE: Governance officer designing accountability and transparency reporting.
 
 ACTION:
-  1. Governance and accountability reporting framework for [SOVEREIGN INSTITUTION]. Decision-making: investment committee structure, delegation authority, escalation path.
+  1. Governance and accountability reporting framework for the sovereign fund. Decision-making: investment committee structure, delegation authority, escalation path.
 
 FORMAT: Governance framework with decision-making structure and reporting requirements.
 
@@ -1488,12 +1488,12 @@ TONE: Sovereign fund governance. Mandate language. Public accountability assumed
 ### PROMPT 73 — The TCFD Four-Pillar Climate Disclosure Framework
 
 ```
-CONTEXT: Attached: [COMPANY]'s annual report, sustainability report and proxy statement ([FILE]), all for fiscal [DATE]. Disclosure quality varies by pillar and gaps matter as much as content.
+CONTEXT: Attached: Microsoft Corp's annual report, sustainability report and proxy statement (msft-20260630.htm), all for fiscal FY2025 (year ended 31 December 2025). Disclosure quality varies by pillar and gaps matter as much as content. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: ESG analyst applying the TCFD four-pillar climate risk framework.
 
 ACTION:
-  1. TCFD four-pillar analysis for [COMPANY]. Pillar 1 Governance: board oversight, management roles, compensation links.
+  1. TCFD four-pillar analysis for Microsoft Corp. Pillar 1 Governance: board oversight, management roles, compensation links.
 
 FORMAT: TCFD four-pillar disclosure table with scenario analysis and metrics.
 
@@ -1507,12 +1507,12 @@ TONE: ESG and climate. Distinguish disclosed data from modelled data. No greenwa
 ### PROMPT 74 — The EU SFDR Article Classification Protocol
 
 ```
-CONTEXT: You have [FUND]'s prospectus, investment process description and current holdings in [FILE]. The classification is filed with the regulator, so an unsupported claim creates a disclosure liability.
+CONTEXT: You have Government Pension Fund Global's published prospectus and investment process description, and its US-listed holdings in NBIM_13F_2026Q2_holdings.csv. The classification is filed with the regulator, so an unsupported claim creates a disclosure liability. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Regulatory compliance analyst determining SFDR Article classification.
 
 ACTION:
-  1. SFDR Article classification analysis for [FUND]. Determine whether the fund qualifies as Article 6 (no ESG integration), Article 8 (ESG characteristics), or Article 9 (ESG primary objective).
+  1. SFDR Article classification analysis for Government Pension Fund Global. Determine whether the fund qualifies as Article 6 (no ESG integration), Article 8 (ESG characteristics), or Article 9 (ESG primary objective).
 
 FORMAT: SFDR classification recommendation with evidence and disclosure obligations.
 
@@ -1526,12 +1526,12 @@ TONE: ESG and climate. Distinguish disclosed data from modelled data. No greenwa
 ### PROMPT 75 — The Carbon Intensity & Net-Zero Pathway Analysis
 
 ```
-CONTEXT: Holdings and reported emissions for [PORTFOLIO] are in [FILE], with revenue figures for intensity denominators. Coverage is incomplete; estimated data must be labelled as estimated.
+CONTEXT: Holdings are in NBIM_13F_2026Q2_holdings.csv and reported emissions are in your own data file, with revenue figures for intensity denominators. Coverage is incomplete; estimated data must be labelled as estimated. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Climate investment specialist calculating WACI and net-zero pathway.
 
 ACTION:
-  1. Carbon intensity and net-zero pathway analysis for [PORTFOLIO].
+  1. Carbon intensity and net-zero pathway analysis for NBIM_13F_2026Q2_holdings.csv.
   2. Calculate WACI (Weighted Average Carbon Intensity) for the portfolio.
 
 FORMAT: WACI calculation with net-zero pathway and top contributor identification.
@@ -1546,12 +1546,12 @@ TONE: ESG and climate. Distinguish disclosed data from modelled data. No greenwa
 ### PROMPT 76 — The Physical Climate Risk & Stranded Asset Assessment
 
 ```
-CONTEXT: Available: [PORTFOLIO] holdings with facility locations where disclosed ([FILE]) and hazard maps by region. Many issuers report no asset-level detail, which itself is a finding.
+CONTEXT: Available: the US-listed holdings in SNB_13F_2026Q2_holdings.csv, facility locations from issuer disclosures where given, and hazard maps by region. Many issuers report no asset-level detail, which itself is a finding. Source: https://www.sec.gov/Archives/edgar/data/1582202/000158220226000007/InfoTable_Q22026.xml
 
 ROLE: Physical risk analyst mapping asset-level climate hazard exposure.
 
 ACTION:
-  1. Physical climate risk assessment for [PORTFOLIO]. Asset locations: map each holding's key physical assets to climate hazard exposure.
+  1. Physical climate risk assessment for SNB_13F_2026Q2_holdings.csv. Asset locations: map each holding's key physical assets to climate hazard exposure.
 
 FORMAT: Physical risk map with hazard exposure by asset and time horizon.
 
@@ -1565,12 +1565,12 @@ TONE: ESG and climate. Distinguish disclosed data from modelled data. No greenwa
 ### PROMPT 77 — The ESG Score Integration & Factor Analysis
 
 ```
-CONTEXT: Scores from [PROVIDER] and matching return history for [PORTFOLIO] are supplied in [FILE]. Provider methodology changed during the sample, and coverage differs across small caps.
+CONTEXT: Scores from SEC EDGAR and matching return history for NBIM_13F_2026Q2_holdings.csv are supplied in NBIM_13F_2026Q2_holdings.csv. Provider methodology changed during the sample, and coverage differs across small caps. Say which provider you treat as authoritative when two disagree, and why that one. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: ESG factor analyst integrating scores with financial attribution.
 
 ACTION:
-  1. ESG score integration for [PORTFOLIO]. Data source: [PROVIDER].
+  1. ESG score integration for NBIM_13F_2026Q2_holdings.csv. Data source: SEC EDGAR.
 
 FORMAT: ESG score integration with factor analysis and engagement priorities.
 
@@ -1584,12 +1584,12 @@ TONE: ESG and climate. Distinguish disclosed data from modelled data. No greenwa
 ### PROMPT 78 — The Shareholder Engagement & Voting Policy Framework
 
 ```
-CONTEXT: Attached: [INSTITUTION]'s prior voting record, engagement log and the current policy text ([FILE]). Votes are disclosed publicly, so each default stance needs a stated rationale.
+CONTEXT: Attached: Norges Bank Investment Management's published voting record, engagement log and current policy text, with its holdings in NBIM_13F_2026Q2_holdings.csv. Votes are disclosed publicly, so each default stance needs a stated rationale. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Responsible investment officer designing engagement and voting policy.
 
 ACTION:
-  1. Shareholder engagement and voting policy for [INSTITUTION].
+  1. Shareholder engagement and voting policy for Norges Bank (Government Pension Fund Global, Norway).
   2. Priority engagement issues: climate, executive compensation, board composition, human rights.
 
 FORMAT: Engagement policy with voting stances and escalation framework.
@@ -1604,7 +1604,7 @@ TONE: ESG and climate. Distinguish disclosed data from modelled data. No greenwa
 ### PROMPT 79 — The Impact Measurement & SDG Alignment Protocol
 
 ```
-CONTEXT: Portfolio holdings and reported impact metrics for [FUND/PORTFOLIO] sit in [FILE], covering fiscal [DATE]. Most of the book is listed secondary market exposure, not primary capital.
+CONTEXT: Portfolio holdings and reported impact metrics for [FUND/PORTFOLIO] sit in infy-20260331.htm, covering fiscal FY2025 (year ended 31 December 2025). Most of the book is listed secondary market exposure, not primary capital. Source: https://www.sec.gov/Archives/edgar/data/1067491/000119312526270520/infy-20260331.htm
 
 ROLE: Impact measurement specialist aligning portfolio to UN SDG goals.
 
@@ -1623,12 +1623,12 @@ TONE: ESG and climate. Distinguish disclosed data from modelled data. No greenwa
 ### PROMPT 80 — The Climate Scenario Analysis & Portfolio Stress Test
 
 ```
-CONTEXT: Sector exposures for [PORTFOLIO] and the carbon price paths for each scenario are in [FILE]. The stress test is tabled at investment committee next to the risk report.
+CONTEXT: Sector exposures for SNB_13F_2026Q2_holdings.csv and the carbon price paths for each scenario are in SNB_13F_2026Q2_holdings.csv. The stress test is tabled at investment committee next to the risk report. Source: https://www.sec.gov/Archives/edgar/data/1582202/000158220226000007/InfoTable_Q22026.xml
 
 ROLE: Head of responsible investment, presenting the climate stress test and positioning recommendation to the investment committee.
 
 ACTION:
-  1. Climate scenario analysis and portfolio stress test for [PORTFOLIO]. Scenarios: Orderly transition (Net Zero 2050), Disorderly transition (Delayed action then sudden), Hot house world (No action, physical risk dominates).
+  1. Climate scenario analysis and portfolio stress test for SNB_13F_2026Q2_holdings.csv. Scenarios: Orderly transition (Net Zero 2050), Disorderly transition (Delayed action then sudden), Hot house world (No action, physical risk dominates).
 
 FORMAT: Climate scenario portfolio stress test with sector analysis and positioning recommendation.
 
@@ -1644,12 +1644,12 @@ TONE: ESG and climate. Distinguish disclosed data from modelled data. No greenwa
 ### PROMPT 81 — The Institutional Credit Analysis & Scoring Framework
 
 ```
-CONTEXT: Attached: [COMPANY]'s last five annual filings and the peer credit metrics file ([FILE]). Output feeds the quarterly credit review. Mandate floor: minimum [RATING] at purchase.
+CONTEXT: Attached: Caterpillar Inc.'s last five annual filings (cat-20251231.htm) and a peer credit metrics file. Output feeds the quarterly credit review. Mandate floor: minimum AA at purchase. Source: https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm
 
 ROLE: Credit analyst applying institutional credit assessment and scorecard.
 
 ACTION:
-  1. Credit analysis for [COMPANY] using institutional framework.
+  1. Credit analysis for Caterpillar Inc. using institutional framework.
   2. Scorecard: Net Debt/EBITDA, interest coverage, FCF/total debt, Altman Z-Score.
 
 FORMAT: Credit scorecard with trend analysis and rating recommendation.
@@ -1664,12 +1664,12 @@ TONE: Credit analytical. Downside first. State recovery assumptions explicitly a
 ### PROMPT 82 — The Duration & Convexity Risk Management
 
 ```
-CONTEXT: You have the holdings file for [FIXED INCOME PORTFOLIO] ([FILE]) with position-level cash flows, plus the benchmark curve as of [DATE] close. Mandate duration band: [X] years.
+CONTEXT: You have the credit book holdings file with position-level cash flows in your own system, plus the benchmark curve as of FY2025 (year ended 31 December 2025) close. Mandate duration band: [X] years. Input: your own file, not a public filing.
 
 ROLE: Fixed income portfolio manager managing duration and convexity risk.
 
 ACTION:
-  1. Duration and convexity analysis for [FIXED INCOME PORTFOLIO]. DV01 per position.
+  1. Duration and convexity analysis for NBIM_13F_2026Q2_holdings.csv. DV01 per position.
 
 FORMAT: Duration profile with key rate durations and liability matching analysis.
 
@@ -1683,12 +1683,12 @@ TONE: Credit analytical. Downside first. State recovery assumptions explicitly a
 ### PROMPT 83 — The Credit Spread Attribution & Curve Analysis
 
 ```
-CONTEXT: Position-level returns for [FIXED INCOME PORTFOLIO] over [PERIOD] are in [FILE], alongside duration-matched Treasury returns. The attribution goes into the monthly performance pack for the CIO.
+CONTEXT: Position-level returns for the credit book over FY2025 (year ended 31 December 2025) are in your own performance file, alongside duration-matched Treasury returns. The attribution goes into the monthly performance pack for the CIO. Input: your own file, not a public filing.
 
 ROLE: Credit attribution specialist decomposing spread return components.
 
 ACTION:
-  1. Credit spread attribution for [FIXED INCOME PORTFOLIO] over [PERIOD]. Total excess return vs duration-matched Treasuries.
+  1. Credit spread attribution for NBIM_13F_2026Q2_holdings.csv over FY2025 (year ended 31 December 2025). Total excess return vs duration-matched Treasuries.
 
 FORMAT: Credit spread attribution by source, sector, and rating.
 
@@ -1702,7 +1702,7 @@ TONE: Credit analytical. Downside first. State recovery assumptions explicitly a
 ### PROMPT 84 — The Covenant Analysis & Distressed Credit Framework
 
 ```
-CONTEXT: Attached: the indenture and credit agreement for [COMPANY/BOND ISSUE] ([FILE]) plus the last four quarters of reported financials. Covenant levels must tie to filings dated [DATE].
+CONTEXT: Attached: the indenture and credit agreement for [COMPANY/BOND ISSUE] from the deal file, plus the last four quarters of reported financials from its filings (infy-20260331.htm). Covenant levels must tie to filings dated FY2025 (year ended 31 December 2025). Source: https://www.sec.gov/Archives/edgar/data/1067491/000119312526270520/infy-20260331.htm
 
 ROLE: Distressed credit analyst mapping covenant headroom and breach scenarios.
 
@@ -1721,7 +1721,7 @@ TONE: Credit analytical. Downside first. State recovery assumptions explicitly a
 ### PROMPT 85 — The LDI & Liability-Matching Portfolio Construction
 
 ```
-CONTEXT: The actuarial liability schedule for [PENSION FUND/INSTITUTION] and the current asset holdings sit in [FILE], both valued at [DATE]. Output supports the trustee hedging discussion.
+CONTEXT: The actuarial liability schedule for [PENSION FUND/INSTITUTION] and the current asset holdings sit in shel-20251231.htm, both valued at FY2025 (year ended 31 December 2025). Output supports the trustee hedging discussion. Source: https://www.sec.gov/Archives/edgar/data/1306965/000162828026017024/shel-20251231.htm
 
 ROLE: Pension fund analyst applying liability-driven investing (LDI) framework.
 
@@ -1741,12 +1741,12 @@ TONE: Credit analytical. Downside first. State recovery assumptions explicitly a
 ### PROMPT 86 — The Fixed Income Portfolio Construction & Optimisation
 
 ```
-CONTEXT: Working from the [MANDATE] investment guidelines ([FILE]) and the eligible bond universe with current spreads. Concentration caps and minimum quality are set by the guidelines, not by you.
+CONTEXT: Working from the a global equity mandate investment guidelines (sap-20251231x20f.htm) and the eligible bond universe with current spreads. Concentration caps and minimum quality are set by the guidelines, not by you. Source: https://www.sec.gov/Archives/edgar/data/1000184/000110465926020058/sap-20251231x20f.htm
 
 ROLE: Fixed income portfolio construction specialist applying credit mandate rules.
 
 ACTION:
-  1. Fixed income portfolio construction for [MANDATE]. Credit quality minimum.
+  1. Fixed income portfolio construction for a global equity mandate. Credit quality minimum.
 
 FORMAT: Fixed income portfolio blueprint with credit quality, duration, and concentration rules.
 
@@ -1760,12 +1760,12 @@ TONE: Credit analytical. Downside first. State recovery assumptions explicitly a
 ### PROMPT 87 — The Yield Curve Strategy & Positioning
 
 ```
-CONTEXT: Curve levels for [CUR] government bonds as of [DATE] close are in [FILE], with the current portfolio positioning on tab two. Output goes to the investment committee.
+CONTEXT: Curve levels for USD government bonds as of FY2025 (year ended 31 December 2025) close are in msft-20260630.htm, with the current portfolio positioning on tab two. Output goes to the investment committee. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Managing Director on the rates desk at a large sell-side firm, recommending curve positioning to the investment committee.
 
 ACTION:
-  1. Yield curve strategy for [FIXED INCOME PORTFOLIO]. Current curve shape: flat/steep/inverted/humped.
+  1. Yield curve strategy for SNB_13F_2026Q2_holdings.csv. Current curve shape: flat/steep/inverted/humped.
 
 FORMAT: Yield curve positioning strategy with carry analysis and instrument selection.
 
@@ -1779,12 +1779,12 @@ TONE: Credit analytical. Downside first. State recovery assumptions explicitly a
 ### PROMPT 88 — The Credit Default Probability & Recovery Analysis
 
 ```
-CONTEXT: Available for [ISSUER]: equity price history, balance sheet leverage, the CDS quote sheet ([FILE]), and capital structure seniority. All market inputs are as of [DATE] close.
+CONTEXT: Available for Caterpillar Inc.: balance sheet leverage and capital structure seniority from its latest 10-K (cat-20251231.htm), with equity price history and a CDS quote sheet from your own market-data feed. All market inputs are as of FY2025 (year ended 31 December 2025) close. State your recovery assumption and its basis before the default probability is solved. Source: https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm
 
 ROLE: Credit risk analyst modelling default probability and recovery rates.
 
 ACTION:
-  1. Credit default probability and recovery analysis for [ISSUER].
+  1. Credit default probability and recovery analysis for Caterpillar Inc..
   2. Default probability: Merton model (equity vol and leverage), market-implied (CDS spread / (1-Recovery)), rating agency historical default rates by rating.
 
 FORMAT: Default probability with recovery analysis and expected loss calculation.
@@ -1801,7 +1801,7 @@ TONE: Credit analytical. Downside first. State recovery assumptions explicitly a
 ### PROMPT 89 — Model Selection and Cost Optimisation
 
 ```
-CONTEXT: You have the desk's weekly task inventory ([FILE]) with volumes per task type and current published per-token pricing. The routing rule goes to the desk meeting for sign-off.
+CONTEXT: You have the desk's weekly task inventory with volumes per task type and current published per-token pricing. The routing rule goes to the desk meeting for sign-off. Input: your own file, not a public filing.
 
 ROLE: Institutional AI deployment specialist, covering Claude model selection and cost optimisation.
 
@@ -1820,7 +1820,7 @@ TONE: Plain and technical. Describe model behaviour, not model marketing. Note t
 ### PROMPT 90 — The High-Speed Universe Screening & Data Extraction Framework
 
 ```
-CONTEXT: Available: [N] filings for [UNIVERSE] sitting in a watched folder, plus the field schema already agreed with the research team. The run happens overnight, unattended.
+CONTEXT: Available: [N] filings for 1,617 US-listed holdings sitting in a watched folder, plus the field schema already agreed with the research team. The run happens overnight, unattended. Input: your own file, not a public filing.
 
 ROLE: Research operations lead, designing Haiku bulk extraction pipelines.
 
@@ -1839,7 +1839,7 @@ TONE: Plain and technical. Describe model behaviour, not model marketing. Note t
 ### PROMPT 91 — Output Standards Configuration
 
 ```
-CONTEXT: Attached: the firm's compliance language policy ([FILE]) and ten sample outputs from live sessions. The configured standard applies to every analyst session, so ambiguity fails the test.
+CONTEXT: Attached: the firm's compliance language policy and ten sample outputs from live sessions. The configured standard applies to every analyst session, so ambiguity fails the test. Input: your own file, not a public filing.
 
 ROLE: Compliance and AI standards officer, configuring institutional output standards.
 
@@ -1858,12 +1858,12 @@ TONE: Plain and technical. Describe model behaviour, not model marketing. Note t
 ### PROMPT 92 — The Extended Multi-Layer Reasoning Framework
 
 ```
-CONTEXT: The research file on [COMPANY] ([FILE]) is loaded, with competing analyst views already noted. The memo goes to the investment committee, so the reasoning chain has to be auditable.
+CONTEXT: The research file on JPMorgan Chase (jpm-20251231.htm) is loaded, with competing analyst views already noted. The memo goes to the investment committee, so the reasoning chain has to be auditable. Source: https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm
 
-ROLE: Managing Director at a large sell-side firm, reviewing this Opus 4.8 extended-reasoning memo before it goes to the investment committee.
+ROLE: Managing Director at a large sell-side firm, reviewing this Opus 5 extended-reasoning memo before it goes to the investment committee.
 
 ACTION:
-  1. Apply Opus 4.8 extended reasoning to a complex IC memo for [COMPANY]. Use extended thinking mode: the model shows its reasoning chain before the conclusion.
+  1. Apply Opus 5 extended reasoning to a complex IC memo for JPMorgan Chase. Use extended thinking mode: the model shows its reasoning chain before the conclusion.
 
 FORMAT: IC memo with extended reasoning chain and quality comparison vs Sonnet.
 
@@ -1877,12 +1877,12 @@ TONE: Plain and technical. Describe model behaviour, not model marketing. Note t
 ### PROMPT 93 — The Claude Finance Agent Capability Assessment
 
 ```
-CONTEXT: Five representative tasks from [SPECIFIC FINANCE WORKFLOW] are prepared in [FILE], each with a known correct answer. The assessment decides whether this workflow gets deployed to the team.
+CONTEXT: Five representative tasks from the quarterly 13F refresh are prepared in a scoring file, each with a known correct answer. The assessment decides whether this workflow gets deployed to the team. Input: your own file, not a public filing.
 
 ROLE: AI workflow auditor, assessing Claude capability fit for finance use cases.
 
 ACTION:
-  1. Assess Claude's capability for [SPECIFIC FINANCE WORKFLOW]. Test cases: 5 representative tasks from this workflow.
+  1. Assess Claude's capability for the quarterly 13F refresh. Test cases: 5 representative tasks from this workflow.
 
 FORMAT: Capability assessment scorecard with hit rate and workflow fit evaluation.
 
@@ -1896,7 +1896,7 @@ TONE: Plain and technical. Describe model behaviour, not model marketing. Note t
 ### PROMPT 94 — The Institutional AI Cost Management & Budget Framework
 
 ```
-CONTEXT: Available: [TEAM/INSTITUTION] usage logs for the last [PERIOD] and the approved annual technology budget. The framework goes to finance operations, so every figure must reconcile to stated inputs.
+CONTEXT: Available: [TEAM/INSTITUTION] usage logs for the last FY2025 (year ended 31 December 2025) and the approved annual technology budget. The framework goes to finance operations, so every figure must reconcile to stated inputs. Input: your own file, not a public filing.
 
 ROLE: Finance operations manager, building AI cost management and governance.
 
@@ -1915,12 +1915,12 @@ TONE: Plain and technical. Describe model behaviour, not model marketing. Note t
 ### PROMPT 95 — Multi-Model Pipeline Architecture
 
 ```
-CONTEXT: Current manual steps for [FINANCE WORKFLOW] are documented in [FILE], with per-step volumes and turnaround times. Nothing leaves the pipeline without a named human approver.
+CONTEXT: Current manual steps for the quarterly 13F refresh are documented in a process note, with per-step volumes and turnaround times. Nothing leaves the pipeline without a named human approver. Input: your own file, not a public filing.
 
 ROLE: AI infrastructure architect, designing multi-model pipeline for finance teams.
 
 ACTION:
-  1. Design a multi-model pipeline for [FINANCE WORKFLOW]. Stage 1 (Haiku): extraction and classification.
+  1. Design a multi-model pipeline for the quarterly 13F refresh. Stage 1 (Haiku): extraction and classification.
 
 FORMAT: Multi-model pipeline architecture with data flow and quality gates.
 
@@ -1934,12 +1934,12 @@ TONE: Plain and technical. Describe model behaviour, not model marketing. Note t
 ### PROMPT 96 — The Norway GPFG AI-at-Scale Institutional Deployment Framework
 
 ```
-CONTEXT: Scope: [INSTITUTION] holds [N] portfolio companies, and the overnight screening window is fixed. Governance policy requires a named owner and an audit trail for every automated stage.
+CONTEXT: Scope: Norges Bank (Government Pension Fund Global, Norway) holds [N] portfolio companies, and the overnight screening window is fixed. Governance policy requires a named owner and an audit trail for every automated stage. Input: your own file, not a public filing.
 
 ROLE: Institutional AI deployment lead, NBIM-inspired at-scale model architecture.
 
 ACTION:
-  1. Design an AI-at-scale institutional deployment for [INSTITUTION] covering [N] portfolio companies. Three-stage architecture: Haiku for overnight bulk, Sonnet for escalation reports, Opus for complex analysis. Standing rule: write and run a Python script recomputing every cost figure (per-stage totals, saving versus single-model routing) from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Design an AI-at-scale institutional deployment for Norges Bank (Government Pension Fund Global, Norway) covering [N] portfolio companies. Three-stage architecture: Haiku for overnight bulk, Sonnet for escalation reports, Opus for complex analysis. Standing rule: write and run a Python script recomputing every cost figure (per-stage totals, saving versus single-model routing) from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: AI deployment architecture with governance, cost model, and efficiency analysis.
 
@@ -1955,7 +1955,7 @@ TONE: Plain and technical. Describe model behaviour, not model marketing. Note t
 ### PROMPT 97 — The Institutional Claude Project Configuration Framework
 
 ```
-CONTEXT: The Project is empty apart from [FUND]'s mandate document, the benchmark definition, and the firm's compliance language policy ([FILE]). Every later session inherits what you write here.
+CONTEXT: The Project is empty apart from Government Pension Fund Global's mandate document, the benchmark definition, and the firm's compliance language policy. Every later session inherits what you write here. Input: your own file, not a public filing.
 
 ROLE: Research team lead — configuring Claude Projects for coverage universe.
 
@@ -1975,12 +1975,12 @@ TONE: Practical and platform-neutral. Describe what the interface does today and
 ### PROMPT 98 — The Claude Deep Research Sector Initiation Framework
 
 ```
-CONTEXT: No internal coverage of [SECTOR] exists yet. Web research is available; no proprietary documents are uploaded. Output starts the initiation file, so every claim needs a dated source.
+CONTEXT: No internal coverage of Information Technology exists yet. Web research is available; no proprietary documents are uploaded. Output starts the initiation file, so every claim needs a dated source. Input: your own file, not a public filing.
 
 ROLE: Senior analyst — using Deep Research for sector initiation.
 
 ACTION:
-  1. Use Claude Deep Research for a sector initiation on [SECTOR].
+  1. Use Claude Deep Research for a sector initiation on Information Technology.
   2. Query: summarise the competitive landscape, key players, growth drivers, and main risks for this sector.
 
 FORMAT: Sector initiation research output with source verification and gap analysis.
@@ -1995,12 +1995,12 @@ TONE: Practical and platform-neutral. Describe what the interface does today and
 ### PROMPT 99 — The Multi-Quarter Transcript Intelligence Framework
 
 ```
-CONTEXT: [N] consecutive earnings transcripts for [COMPANY] are uploaded to the Project, together with the reported results for each of those quarters. Nothing outside those files is available.
+CONTEXT: [N] consecutive earnings transcripts for Microsoft Corporation are uploaded to the Project, together with the reported results for each of those quarters from its 10-K (msft-20260630.htm). Nothing outside those files is available. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Equity analyst — multi-quarter transcript intelligence in a Project.
 
 ACTION:
-  1. Load [N] earnings call transcripts for [COMPANY] into a Project.
+  1. Load [N] earnings call transcripts for Microsoft Corporation into a Project.
   2. Query: build a management credibility scorecard. Did management's language in each quarter predict the subsequent quarter's results?
   3. Track specific language shifts vs subsequent guidance changes.
 
@@ -2016,12 +2016,12 @@ TONE: Practical and platform-neutral. Describe what the interface does today and
 ### PROMPT 100 — The Automated Prior Period vs Current Period Document Analysis
 
 ```
-CONTEXT: Two annual reports for [COMPANY], FY[X] and FY[Y], are the only documents in the Project. Findings feed a thesis review, so each change needs a section reference.
+CONTEXT: Two annual reports for Microsoft Corporation, FY[X] and FY[Y], are the only documents in the Project. Findings feed a thesis review, so each change needs a section reference. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Research analyst — automated prior vs current period document comparison.
 
 ACTION:
-  1. Upload [COMPANY]'s FY[X] and FY[Y] annual reports into a Project.
+  1. Upload Microsoft Corporation's FY[X] and FY[Y] annual reports into a Project.
   2. Query: what changed between the two years? Focus on: risk factor additions/removals, business description changes, forward-looking language shifts.
 
 FORMAT: Prior period vs current period document comparison with financial significance flags.
@@ -2036,12 +2036,12 @@ TONE: Practical and platform-neutral. Describe what the interface does today and
 ### PROMPT 101 — The Full Sector Initiation & Coverage Launch Framework
 
 ```
-CONTEXT: Uploaded to the Project: annual reports, recent transcripts, and industry primers for [N] companies in [SECTOR]. The pack is signed off before coverage launches, so figures must reconcile.
+CONTEXT: Uploaded to the Project: annual reports, recent transcripts, and industry primers for [N] companies in Information Technology, each from its own source. The pack is signed off before coverage launches, so figures must reconcile. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Managing Director at a large sell-side firm — signing off the sector initiation before coverage launches.
 
 ACTION:
-  1. Launch full coverage on [SECTOR] using a Project with all available annual reports, recent earnings transcripts, and industry primers uploaded. Build: competitive landscape, financial comparison across [N] companies, sector risks, and a ranking of companies by investment attractiveness. Standing rule: after the financial comparison is built, write and run a Python script recomputing every derived figure (margins, medians, ranking inputs) from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Launch full coverage on Information Technology using a Project with all available annual reports, recent earnings transcripts, and industry primers uploaded. Build: competitive landscape, financial comparison across [N] companies, sector risks, and a ranking of companies by investment attractiveness. Standing rule: after the financial comparison is built, write and run a Python script recomputing every derived figure (margins, medians, ranking inputs) from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
 
 FORMAT: Full sector coverage launch pack with competitive analysis and company ranking.
 
@@ -2055,7 +2055,7 @@ TONE: Practical and platform-neutral. Describe what the interface does today and
 ### PROMPT 102 — The Long-Running Project Context Optimisation
 
 ```
-CONTEXT: An existing Project has run for [PERIOD]. Available: its current system prompt, the uploaded document list ([FILE]), and session query history. Storage and context budget are finite.
+CONTEXT: An existing Project has run for FY2025 (year ended 31 December 2025). Available: its current system prompt, the uploaded document list, and session query history. Storage and context budget are finite. Input: your own file, not a public filing.
 
 ROLE: AI workflow optimiser — auditing and improving Project context configuration.
 
@@ -2074,7 +2074,7 @@ TONE: Practical and platform-neutral. Describe what the interface does today and
 ### PROMPT 103 — The Real-Time Portfolio Event & Signal Monitoring
 
 ```
-CONTEXT: The Project holds the coverage universe list ([FILE]) with position sizes and thesis notes per name. A daily feed of filings, news, and price moves arrives each morning.
+CONTEXT: The Project holds the coverage universe list with position sizes and thesis notes per name. A daily feed of filings, news, and price moves arrives each morning. Input: your own file, not a public filing.
 
 ROLE: Portfolio monitoring lead — real-time event and signal monitoring workflow.
 
@@ -2094,12 +2094,12 @@ TONE: Practical and platform-neutral. Describe what the interface does today and
 ### PROMPT 104 — The Multi-Source Intelligence Aggregation & Synthesis
 
 ```
-CONTEXT: Loaded into the Project: [COMPANY]'s latest 10-K, the last four earnings transcripts, and three external research notes. Sources disagree in places, and the disagreement itself is the finding.
+CONTEXT: Loaded into the Project: Microsoft Corporation's latest 10-K (msft-20260630.htm), the last four earnings transcripts, and three external research notes, each from its own source. Sources disagree in places, and the disagreement itself is the finding. Source: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
 
 ROLE: Research synthesis specialist — multi-source intelligence aggregation.
 
 ACTION:
-  1. Multi-source synthesis task: load [COMPANY]'s 10-K, last 4 earnings transcripts, and 3 recent sell-side research notes into a Project. Query: synthesise the bull and bear case from all sources.
+  1. Multi-source synthesis task: load Microsoft Corporation's 10-K, last 4 earnings transcripts, and 3 recent sell-side research notes into a Project. Query: synthesise the bull and bear case from all sources.
 
 FORMAT: Multi-source synthesis with agreement/disagreement analysis and coverage gaps.
 
@@ -2115,7 +2115,7 @@ TONE: Practical and platform-neutral. Describe what the interface does today and
 ### PROMPT 105 — The Institutional Monte Carlo Portfolio VaR Implementation
 
 ```
-CONTEXT: The repo holds position-level holdings for [PORTFOLIO] and a daily return history covering [DATE RANGE]. CLAUDE.md already carries the standing validation rule. Python environment is set up.
+CONTEXT: The repo holds the position-level holdings from NBIM_13F_2026Q2_holdings.csv, with a daily return history for 1 April 2026 to 30 June 2026 from your own market-data feed. CLAUDE.md already carries the standing validation rule. Python environment is set up. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Quantitative risk engineer — specifying and reviewing Monte Carlo VaR in Python.
 
@@ -2134,12 +2134,12 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 106 — The Python DCF Model
 
 ```
-CONTEXT: Working in a repo where [COMPANY]'s segment revenue history and the WACC input sheet ([FILE]) already sit. Output has to export to Excel for the modelling team to check.
+CONTEXT: Working in a repo where Apple Inc.'s segment revenue history and the WACC input sheet (aapl-20250927.htm) already sit. Output has to export to Excel for the modelling team to check. Source: https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm
 
 ROLE: Financial modeller — specifying and validating DCF automation in Python.
 
 ACTION:
-  1. Ask Claude Code to build a complete Python DCF model for [COMPANY]. Specification: 5-year revenue projections by segment, WACC calculation with sourced inputs, terminal value via two methods (Gordon Growth + exit multiple), 3x3 sensitivity table (WACC x TGR), formatted Excel export. The repo's CLAUDE.md standing rule applies: every derived figure (WACC, terminal value, per-share bridge) recomputed by script, PASS/FAIL per check.
+  1. Ask Claude Code to build a complete Python DCF model for Apple Inc.. Specification: 5-year revenue projections by segment, WACC calculation with sourced inputs, terminal value via two methods (Gordon Growth + exit multiple), 3x3 sensitivity table (WACC x TGR), formatted Excel export. The repo's CLAUDE.md standing rule applies: every derived figure (WACC, terminal value, per-share bridge) recomputed by script, PASS/FAIL per check.
 
 FORMAT: Claude Code builds the DCF scaffolding. Analyst verifies: revenue growth assumptions, WACC inputs, terminal value methodology, sensitivity table logic.
 
@@ -2153,7 +2153,7 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 107 — The Options Pricing & Greeks Calculator Framework
 
 ```
-CONTEXT: Available in the repo: a position file of European options on [UNDERLYING] ([FILE]) with strikes, expiries and market prices, plus the risk-free curve dated [DATE]. No pricing library is installed.
+CONTEXT: Available in the repo: a position file of European options on the S&P 500 with strikes, expiries and market prices, plus the risk-free curve dated FY2025 (year ended 31 December 2025). No pricing library is installed. Input: your own file, not a public filing.
 
 ROLE: Derivatives quant — specifying and reviewing Black-Scholes options pricer.
 
@@ -2173,7 +2173,7 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 108 — The Fama-French Multi-Factor Model
 
 ```
-CONTEXT: The repo contains monthly portfolio returns for [DATE RANGE] and a downloaded factor file with Mkt-RF, SMB, HML, and MOM columns. Factor definitions must match the source documentation.
+CONTEXT: The repo contains monthly portfolio returns for 1 April 2026 to 30 June 2026 and a downloaded factor file with Mkt-RF, SMB, HML, and MOM columns. Factor definitions must match the source documentation. Input: your own file, not a public filing.
 
 ROLE: Factor model specialist — specifying and validating Fama-French implementation.
 
@@ -2192,12 +2192,12 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 109 — The Institutional Investment Strategy Backtesting Engine
 
 ```
-CONTEXT: Price and fundamental history for [UNIVERSE] sits in the repo as dated CSVs. Results feed a strategy review, so the walk-forward split has to be fixed before any run.
+CONTEXT: Price and fundamental history for the 1,617 US-listed names in NBIM_13F_2026Q2_holdings.csv sits in the repo as dated CSVs from your own market-data feed. Results feed a strategy review, so the walk-forward split has to be fixed before any run. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Quantitative strategist — specifying and reviewing backtesting engine.
 
 ACTION:
-  1. Ask Claude Code to build an investment strategy backtesting engine in Python. Specification: signal generation from [DESCRIBE], position sizing (equal weight or [RULE]), transaction costs ([X]bps per trade), performance metrics (annualised return, Sharpe, Sortino, max drawdown, turnover, hit rate).
+  1. Ask Claude Code to build an investment strategy backtesting engine in Python. Specification: signal generation from the quarterly 13F refresh, position sizing (equal weight or concentration above 5 percent of the book), transaction costs ([X]bps per trade), performance metrics (annualised return, Sharpe, Sortino, max drawdown, turnover, hit rate).
 
 FORMAT: Claude Code builds the engine. Analyst verifies: no look-ahead bias in signal calculation, transaction costs realistic, walk-forward split discipline enforced.
 
@@ -2211,7 +2211,7 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 110 — The Python Portfolio Risk Attribution & Decomposition
 
 ```
-CONTEXT: You have current portfolio weights, the benchmark weights, and a factor covariance matrix dated [DATE] in the repo. Existing risk code is in the same package and must not break.
+CONTEXT: You have current portfolio weights, the benchmark weights, and a factor covariance matrix dated FY2025 (year ended 31 December 2025) in the repo. Existing risk code is in the same package and must not break. Input: your own file, not a public filing.
 
 ROLE: Risk attribution engineer — specifying and validating portfolio risk decomposition.
 
@@ -2230,7 +2230,7 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 111 — The Institutional Performance Analytics & Attribution
 
 ```
-CONTEXT: Available: dated cash flows, valuations, and sector weights for [PORTFOLIO] and its benchmark. The output supports a composite report, so methodology choices have to be documented in code.
+CONTEXT: Available: the holdings in NBIM_13F_2026Q2_holdings.csv, with dated cash flows, valuations and sector weights for the composite and its benchmark from your own records. The output supports a composite report, so methodology choices have to be documented in code. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Performance analytics engineer — specifying GIPS-compatible performance suite.
 
@@ -2249,12 +2249,12 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 112 — The Financial Data Extraction & Processing Pipeline
 
 ```
-CONTEXT: Raw files arrive in [DATA SOURCE FORMAT] with inconsistent headers and missing rows. Downstream models in the same repo read the cleaned output, so schema changes break them.
+CONTEXT: Raw files arrive in CSV with inconsistent headers and missing rows. Downstream models in the same repo read the cleaned output, so schema changes break them. Input: your own file, not a public filing.
 
 ROLE: Data engineering lead — specifying financial data ingestion pipeline.
 
 ACTION:
-  1. Ask Claude Code to build a financial data ingestion and processing pipeline in Python. Specification: ingest [DATA SOURCE FORMAT: CSV/Excel/JSON/API], validate schema, handle missing data, calculate derived metrics ([LIST]), export to structured Excel.
+  1. Ask Claude Code to build a financial data ingestion and processing pipeline in Python. Specification: ingest [DATA SOURCE FORMAT: CSV/Excel/JSON/API], validate schema, handle missing data, calculate derived metrics, export to structured Excel.
 
 FORMAT: Claude Code builds the pipeline. Analyst verifies: data validation catches real errors, derived metrics match manual calculations on sample rows, Excel output is formatted correctly.
 
@@ -2268,14 +2268,14 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 113 — The Scheduled Weekly Run and Its Self-Checking Loop
 
 ```
-CONTEXT: The Monday risk refresh runs the same steps every week. The repo already holds the inputs and CLAUDE.md carries the standing validation rule. No analyst is present at run time.
+CONTEXT: The Monday risk refresh runs the same steps every week. The repo already holds the inputs and CLAUDE.md carries the standing validation rule. No analyst is present at run time. Input: your own file, not a public filing.
 
 ROLE: Quantitative analyst specifying a recurring unattended job. You own the failure modes, not only the path where everything works.
 
 ACTION:
-  1. Turn the standing weekly task [TASK NAME] into a scheduled job that runs at [DAY/TIME] with no analyst present. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
+  1. Turn the standing weekly task quarterly 13F refresh into a scheduled job that runs at [DAY/TIME] with no analyst present. Standing rule: after any multi-step numerical work, write and run a Python script recomputing every derived figure from stated inputs; print PASS/FAIL per check; correct and rerun until all pass.
   2. Write the run as a loop that ends on its own verdict: refresh inputs, recompute, validate, write output, stop. Each pass finishes on the validation result, not on the output file.
-  3. Name the halt conditions explicitly: a failed validation check, an input file older than [N] days, a row count outside [RANGE], or an unhandled exception. On any halt, write the reason to the run log and send nothing onward.
+  3. Name the halt conditions explicitly: a failed validation check, an input file older than [N] days, a row count outside the quarter ended 30 June 2026, or an unhandled exception. On any halt, write the reason to the run log and send nothing onward.
   4. Separate what the job may do alone from what needs a person. It may refresh, recompute and file. It may not overwrite the prior week's output, change a parameter, or distribute anything to a reader.
   5. Log every run: timestamp, each input and its vintage, checks passed, checks failed, output path, and the halt reason where one applies.
   6. Run it first as a dry run against last week's inputs and reconcile every figure to what was already published.
@@ -2294,7 +2294,7 @@ TONE: Engineering register. Report failures as failures. Paper results labelled 
 ### PROMPT 114 — The Cowork Earnings Flash Note
 
 ```
-CONTEXT: A watched folder receives filing PDFs for [N] covered names during reporting season. Consensus estimates are available in [FILE]. Nothing reaches distribution without the analyst approving the draft.
+CONTEXT: A watched folder receives filing PDFs for [N] covered names during reporting season. Consensus estimates are available in a broker file. Nothing reaches distribution without the analyst approving the draft. Input: your own file, not a public filing.
 
 ROLE: Research operations, configuring the Cowork earnings flash pipeline.
 
@@ -2313,7 +2313,7 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 ### PROMPT 115 — The Real-Time News Classification & Alert System
 
 ```
-CONTEXT: A news feed covering [UNIVERSE] runs continuously, and the thesis notes for each holding sit in the Project. Most items are noise; the alert path is for material ones.
+CONTEXT: A news feed from your own provider covers the 1,617 US-listed holdings in NBIM_13F_2026Q2_holdings.csv, and the thesis notes for each holding sit in the Project. Most items are noise; the alert path is for material ones. Source: https://www.sec.gov/Archives/edgar/data/1374170/000137417026000069/Q2_2026.xml
 
 ROLE: Research operations, configuring the news classification and monitoring pipeline.
 
@@ -2332,7 +2332,7 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 ### PROMPT 116 — The Automated Portfolio Risk Limit Breach Detection
 
 ```
-CONTEXT: Overnight position files and the mandate limit table ([FILE]) are available each morning before open. The project CLAUDE.md carries the recompute-before-alert rule. Alerts go to the CIO directly.
+CONTEXT: Overnight position files and the mandate limit table are available each morning before open. The project CLAUDE.md carries the recompute-before-alert rule. Alerts go to the CIO directly. Input: your own file, not a public filing.
 
 ROLE: Risk operations, configuring automated portfolio risk limit monitoring.
 
@@ -2351,12 +2351,12 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 ### PROMPT 117 — Claude's Five Finance Plugins: Selection and Configuration
 
 ```
-CONTEXT: All five finance plugins are installed and none is active. [YOUR TASK] is defined in [FILE], with the deliverable format the receiving desk expects already specified.
+CONTEXT: All five finance plugins are installed and none is active. the quarterly 13F refresh is defined in a run sheet, with the deliverable format the receiving desk expects already specified. Input: your own file, not a public filing.
 
 ROLE: Finance analyst, selecting and configuring the right Claude finance plugin.
 
 ACTION:
-  1. Select the appropriate Claude finance plugin for [YOUR TASK]. Five options: Financial Analysis (DuPont, Altman Z, ratios), Investment Banking (LBO, accretion/dilution), Equity Research (research note format, sector KPIs), Private Equity (IC memo, IRR/MOIC), Wealth Management (IPS, RRTTLLU, client letters).
+  1. Select the appropriate Claude finance plugin for the quarterly 13F refresh. Five options: Financial Analysis (DuPont, Altman Z, ratios), Investment Banking (LBO, accretion/dilution), Equity Research (research note format, sector KPIs), Private Equity (IC memo, IRR/MOIC), Wealth Management (IPS, RRTTLLU, client letters).
 
 FORMAT: Plugin selection rationale and verification that domain conventions are applied.
 
@@ -2370,12 +2370,12 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 ### PROMPT 118 — HNI Client Advisory Using Claude Wealth Management
 
 ```
-CONTEXT: Client facts for [CLIENT] are captured in the onboarding file ([FILE]): age, risk profile, assets, horizon, and tax jurisdiction. Compliance reviews the letter before the client sees it.
+CONTEXT: Client facts for a UK-domiciled pension scheme are captured in the onboarding file : age, risk profile, assets, horizon, and tax jurisdiction. Compliance reviews the letter before the client sees it. Input: your own file, not a public filing.
 
 ROLE: Senior wealth advisor, reviewing the plugin-generated HNI package before it goes to the client and compliance.
 
 ACTION:
-  1. Use the Claude Wealth Management Plugin for a complete HNI client advisory package. Client: [AGE], [RISK PROFILE], [AUM], [TIME HORIZON], [TAX JURISDICTION].
+  1. Use the Claude Wealth Management Plugin for a complete HNI client advisory package. Client: 58, long-horizon, fully funded, USD 1.0 trillion, ten years, India.
 
 FORMAT: Complete HNI advisory package: RRTTLLU assessment, IPS draft, and compliant client letter.
 
@@ -2389,12 +2389,12 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 ### PROMPT 119 — The FactSet / LSEG / PitchBook Live Data Integration Framework
 
 ```
-CONTEXT: Three MCP data connectors are authorised on this workspace. [SPECIFIC USE CASE] currently runs on manual exports. Refresh frequency and field mapping are not defined yet.
+CONTEXT: Three MCP data connectors are authorised on this workspace. portfolio concentration review currently runs on manual exports. Refresh frequency and field mapping are not defined yet. Input: your own file, not a public filing.
 
 ROLE: Data infrastructure lead, configuring MCP live data connectors.
 
 ACTION:
-  1. Configure a FactSet/LSEG/PitchBook MCP connector for [SPECIFIC USE CASE]. Define the data elements needed, which connector provides them, refresh frequency, and how data flows into Claude's analytical output.
+  1. Configure a FactSet/LSEG/PitchBook MCP connector for portfolio concentration review. Define the data elements needed, which connector provides them, refresh frequency, and how data flows into Claude's analytical output.
 
 FORMAT: MCP connector configuration with data flow design and live test results.
 
@@ -2408,12 +2408,12 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 ### PROMPT 120 — The Investment Committee Presentation Preparation Pipeline
 
 ```
-CONTEXT: Current portfolio weights for [FUND/PORTFOLIO] and the prior IC deck are both in [FOLDER]. The run happens the night before [MEETING DATE], and the PM reviews everything.
+CONTEXT: Current portfolio weights for [FUND/PORTFOLIO] and the prior IC deck are both in companion/portfolios/. The run happens the night before 30 June 2026, and the PM reviews everything. Input: your own file, not a public filing.
 
 ROLE: Research team lead, automating IC deck preparation via Cowork.
 
 ACTION:
-  1. Automate IC deck preparation using a Cowork [CADENCE] workflow. Step 1 (Haiku): pull current portfolio weights, compare to last IC, then calculate all position changes.
+  1. Automate IC deck preparation using a Cowork quarterly workflow. Step 1 (Haiku): pull current portfolio weights, compare to last IC, then calculate all position changes.
 
 FORMAT: IC deck automation pipeline with position change analysis and PM review gate.
 
@@ -2427,7 +2427,7 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 ### PROMPT 121 — The Automated Client Communication & Quarterly Letter System
 
 ```
-CONTEXT: Quarter-end holdings, cash flows, and benchmark returns for [CLIENT] are available in [FILE]. The project CLAUDE.md requires every performance figure recomputed and passing before compliance sees the draft.
+CONTEXT: Quarter-end holdings, cash flows, and benchmark returns for a UK-domiciled pension scheme are available in the scheme file. The project CLAUDE.md requires every performance figure recomputed and passing before compliance sees the draft. Input: your own file, not a public filing.
 
 ROLE: Client relations manager, automating the quarterly client communication pipeline.
 
@@ -2446,7 +2446,7 @@ TONE: Operational. Name what is automated and what still needs a person. No clai
 ### PROMPT 122 — The Connector Audit: What Is Reachable, What Is Missing, What Is Stale
 
 ```
-CONTEXT: This workspace has accumulated connectors, watched folders and plugins over [PERIOD]. Nobody has checked what each one still reaches. Several pipelines depend on them without saying so.
+CONTEXT: This workspace has accumulated connectors, watched folders and plugins over FY2025 (year ended 31 December 2025). Nobody has checked what each one still reaches. Several pipelines depend on them without saying so. Input: your own file, not a public filing.
 
 ROLE: Operations lead auditing the data plumbing behind the desk's automated work. Report what is true today, not what was configured.
 
